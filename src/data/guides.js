@@ -572,19 +572,19 @@ export const PROGRESSION_GUIDES = {
             heading: 'Tüm Efsanevi Silahlar',
             intro: 'Brits PvE Worlds V2 sunucusundaki tüm özel mühimmatlı silahlar:',
             items: [
-              'Brits Golden M249: Helikopterlere +%50 daha fazla hasar | Cephane: 5.56 Rifle Ammo | Rol: Heli Avcısı',
-              'Brits Golden AK: Bradley radarı ve Bilim İnsanlarına +%30 hasar | Cephane: 5.56 Rifle Ammo | Rol: Monument Temizliği',
-              'The LAGINATOR: Tam otomatik yüksek güçlü roketatar | Cephane: 5.56 Rifle Ammo & Rockets | Rol: Üs Yıkıcı / Raid Canavarı',
-              'Eoocoka: Kese Bombası fırlatan eoka tabancası | Cephane: Shotgun Shells & Satchel Charges | Rol: Erken Oyun Kapı Kırıcı',
-              'Plaguepiercer: Bilim İnsanlarına %500 devasa hasar | Cephane: Arrows | Rol: Deep Sea & Cobalt Katili',
-              'Ashmaker: HV Roketi ateşleyen özel altıpatlar | Cephane: Pistol Bullets & HV Rockets | Rol: Mobil Ağır Topçu',
-              'Brits Boom Stick: Altıpatlar ile roket mühimmatının hibrit füzyonu | Cephane: 5.56 Rifle Ammo & Rockets | Rol: Raid Desteği & Yıkım',
-              'Ace’s Python: 50 mermilik şarjör, Helikopterlere +%30 hasar (Yumurta kostümünde +%20 ekstra) | Cephane: 5.56 Rifle Ammo | Rol: Hafif Heli Avcısı',
-              'Cluster Clutch: F1 el bombaları fırlatan su borusu pompalı tüfek | Cephane: Shotgun Shells & F1 Grenades | Rol: Alan Temizliği',
-              'Brits Broken Eoka: Pompalı mermisiyle helikopterlere tam +%500 Hasar! | Cephane: Shotgun Shells | Rol: Tek Vuruşta Heli İndirme',
-              'DoubleBoom: Roket fırlatan çifte pompalı tüfek | Cephane: Shotgun Shells & Rockets | Rol: Yakın Mesafe Yıkım',
-              'Hydra’s Stolen Wand: Doğrudan MLRS füzeleri fırlatan asa | Cephane: MLRS Rockets | Rol: Kuşatma Asası',
-              'Huff-N-Puff: Bradley tanklarını saniyeler içinde eriten özel dartlar fırlatır | Cephane: HV Rockets & Special Darts | Rol: Bradley Katili'
+              'Brits Golden M249: Helikopterlere +%50 daha fazla hasar | Cephane: 5.56 Rifle Ammo',
+              'Brits Golden AK: Bradley radarı ve Bilim İnsanlarına +%30 hasar | Cephane: 5.56 Rifle Ammo',
+              'The LAGINATOR: Tam otomatik yüksek güçlü roketatar | Cephane: 5.56 Rifle Ammo & Rockets',
+              'Eoocoka: Kese Bombası fırlatan eoka tabancası | Cephane: Shotgun Shells & Satchel Charges',
+              'Plaguepiercer: Bilim İnsanlarına %500 devasa hasar | Cephane: Arrows',
+              'Ashmaker: HV Roketi ateşleyen özel altıpatlar | Cephane: Pistol Bullets & HV Rockets',
+              'Brits Boom Stick: Altıpatlar ile roket mühimmatının hibrit füzyonu | Cephane: 5.56 Rifle Ammo & Rockets',
+              'Ace’s Python: 50 mermilik şarjör, Helikopterlere +%30 hasar (Yumurta kostümünde +%20 ekstra) | Cephane: 5.56 Rifle Ammo',
+              'Cluster Clutch: F1 el bombaları fırlatan su borusu pompalı tüfek | Cephane: Shotgun Shells & F1 Grenades',
+              'Brits Broken Eoka: Pompalı mermisiyle helikopterlere tam +%500 Hasar! | Cephane: Shotgun Shells',
+              'DoubleBoom: Roket fırlatan çifte pompalı tüfek | Cephane: Shotgun Shells & Rockets',
+              'Hydra’s Stolen Wand: Doğrudan MLRS füzeleri fırlatan asa | Cephane: MLRS Rockets',
+              'Huff-N-Puff: Bradley tanklarını saniyeler içinde eriten özel dartlar fırlatır | Cephane: HV Rockets & Special Darts'
             ]
           }
         ],

@@ -90,13 +90,13 @@ export default function Sidebar({
       if (
         w.name.toLocaleLowerCase('tr').includes(query) ||
         w.effect?.toLocaleLowerCase('tr').includes(query) ||
-        w.role?.toLocaleLowerCase('tr').includes(query)
+        w.ammo?.toLocaleLowerCase('tr').includes(query)
       ) {
         results.push({
           id: `wpn-${w.name}`,
           title: w.name,
           category: 'Efsanevi Silah',
-          badge: w.role,
+          badge: w.ammo,
           desc: w.effect,
           action: () => {
             setActiveTab('legendary');
@@ -136,7 +136,7 @@ export default function Sidebar({
           id: `skill-${s.id}`,
           title: s.name,
           category: `Yetenek (${s.tree})`,
-          badge: s.tier,
+          badge: s.cost || '1 SP',
           desc: s.benefit || s.desc,
           action: () => {
             setActiveTab('skills');

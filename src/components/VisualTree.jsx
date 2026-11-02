@@ -177,7 +177,6 @@ export default function VisualTree({ activeTree, setActiveTree }) {
             {/* Yetenekler (Skills) */}
             {currentLayout.nodes.map((node) => {
               const isSelected = selectedNodeId === node.id;
-              const isGod = node.tier === 'God-Tier';
 
               return (
                 <div
@@ -195,8 +194,6 @@ export default function VisualTree({ activeTree, setActiveTree }) {
                     className={`w-11 h-11 sm:w-12 sm:h-12 rotate-45 rounded-xl flex items-center justify-center transition-all duration-200 ${
                       isSelected
                         ? 'bg-terracotta border-2 border-sprout scale-110 shadow-sprout ring-4 ring-sprout/20'
-                        : isGod
-                        ? 'bg-sow border-2 border-terracotta hover:border-sprout hover:scale-105'
                         : 'bg-sow border border-sow-border hover:border-mist hover:scale-105'
                     }`}
                   >
@@ -248,8 +245,8 @@ export default function VisualTree({ activeTree, setActiveTree }) {
             </div>
           </div>
 
-          <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-sprout text-sow-dark shrink-0">
-            {selectedSkill?.tier || 'Standart'}
+          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-sow-dark border border-sow-border text-sprout shrink-0">
+            {formatCostText(selectedSkill?.cost) || '1 SP'}
           </span>
         </div>
 

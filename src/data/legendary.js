@@ -49,7 +49,7 @@ export const LEGENDARY_TOOLS = [
     isConsumable: false,
     dropSource: 'Yerdeki taş ve kütükler toplanırken nadiren bulunur',
     effect: '6 metre çapındaki tüm ekili bitkileri (3x3 planter kutuları için ideal) tek tıkla anında hasat eder.',
-    highlight: 'Bountiful Harvest ve God-Seed (GGGYYY) ile kumaş zengini olmanın anahtarıdır.'
+    highlight: 'Bountiful Harvest ve GGGYYY gen dizilimiyle yüksek miktarda kumaş hasadı sağlar.'
   },
   {
     id: 'fertile-bone',
@@ -98,7 +98,6 @@ export const LEGENDARY_SETS = [
     id: 'leviathan-armor',
     name: 'Leviathan Zırh Seti',
     category: 'Savaş Seti (Deep Sea Prototipi)',
-    role: 'Ağır Darbe Emilimi',
     dropSource: 'Deep Sea Cobalt kargo ambarı ve kilitli kasaları',
     parts: '1 parçada ~%33, 6 parçada %46 emilim',
     setBonus: 'Tam Sette %53 Darbe Emilimi',
@@ -108,7 +107,6 @@ export const LEGENDARY_SETS = [
     id: 'impact-armor',
     name: 'Impact Zırh Seti',
     category: 'Savaş Seti (Hasar Azaltma)',
-    role: 'Darbe Dayanıklılığı',
     dropSource: 'Nightmare Raid kasaları ve Helikopter enkazları',
     parts: 'Tam Zırhlı Kompozit Plakalar',
     setBonus: 'Tam Sette %33 Hasar Azaltma',
@@ -118,17 +116,15 @@ export const LEGENDARY_SETS = [
     id: 'dragon-thorn',
     name: 'Dragon Thorn Zırh Seti',
     category: 'Savaş Seti (Vampirik İyileşme)',
-    role: 'Ölümsüz Tank Seti',
     dropSource: 'Endgame Zindanlar ve Boss Sandıkları',
     parts: 'Maske (%1), Hoodie (%2), Pelerin (%7), Eldiven (%1), Çizme (%1), Pantolon (%0.5)',
     setBonus: 'Tam Sette %12.5 Can Emme (Vampiric)',
-    desc: 'Hasar vurdukça canınızı doldurur. Combat ağacındaki Life Leech (%1) yeteneği ile birleştiğinde toplam %13.5 can yenilemesiyle çatışmalarda ölümsüz bir tanka dönüşürsünüz.'
+    desc: 'Hasar vurdukça canınızı doldurur. Combat ağacındaki Life Leech (%1) yeteneği ile birleştiğinde toplam %13.5 can yenilemesi sağlayarak çatışmalarda yüksek hayatta kalma sunar.'
   },
   {
     id: 'helping-hands',
     name: 'Helping Hands',
     category: 'Efsanevi Güvenlik Donanımı',
-    role: 'Otomatik Dirilme',
     dropSource: 'Nadir dünya bossu ödülleri ve etkinlik kasaları',
     parts: 'Özel el ve zırh donanımı',
     setBonus: 'Yere düştüğünde anında %100 tam canla ayağa kaldırır + 5 saniye ölümsüzlük verir!',
@@ -140,7 +136,6 @@ export const LEGENDARY_SETS = [
     id: 'mining-set',
     name: 'Madencilik Seti (Mining Set)',
     category: 'Toplama Seti (Maden)',
-    role: '+%100 Maden Verimi',
     dropSource: 'Görevler, pazar ve dünya sandıkları',
     parts: 'Madenci Şapkası (%30), Gövde (%35), Pantolon (%35)',
     setBonus: 'Tam Sette %100 Ekstra Maden Cevheri',
@@ -150,7 +145,6 @@ export const LEGENDARY_SETS = [
     id: 'lumberjack-set',
     name: 'Oduncu Seti (Lumberjack Set)',
     category: 'Toplama Seti (Odun)',
-    role: '+%100 Odun Verimi',
     dropSource: 'Quartermaster görevleri ve etkinlik ödülleri',
     parts: 'Oduncu Şapkası (%30), Gövde (%35), Pantolon (%35)',
     setBonus: 'Tam Sette %100 Ekstra Odun',
@@ -160,7 +154,6 @@ export const LEGENDARY_SETS = [
     id: 'hunter-set',
     name: 'Avcı Seti (Hunter Set)',
     category: 'Toplama Seti (Avcılık & Hayvan)',
-    role: '+%100 Deri ve Kemik',
     dropSource: 'Avcılık görev zincirleri ve nadir sandıklar',
     parts: 'Avcı Şapkası (%30), Gövde (%35), Pantolon (%35)',
     setBonus: 'Tam Sette %100 Ekstra Deri & Kemik',
@@ -170,7 +163,6 @@ export const LEGENDARY_SETS = [
     id: 'farmer-set',
     name: 'Çiftçi Seti (Farmer Set)',
     category: 'Toplama Seti (Tarım)',
-    role: '+%60 Hasat Verimi',
     dropSource: 'Tarım görevleri ve Çiftçi Pazarı',
     parts: 'Çiftçi Şapkası, Gömlek, Pantolon',
     setBonus: 'Tam Sette %60 Ekstra Hasat Verimi',
@@ -180,7 +172,6 @@ export const LEGENDARY_SETS = [
     id: 'scavenger-set',
     name: 'Yağmacı Seti (Scavenger Set)',
     category: 'Toplama Seti (Hurda & Bileşen)',
-    role: '+%60 Hurda & Parça',
     dropSource: 'Monument sandıkları ve yol kasaları',
     parts: 'Scavenger Maskesi, Ceketi, Pantolonu',
     setBonus: 'Tam Sette %60 Ekstra Hurda & Bileşen',
@@ -190,7 +181,6 @@ export const LEGENDARY_SETS = [
     id: 'angler-set',
     name: 'Balıkçı Seti (Angler Set)',
     category: 'Toplama Seti (Balıkçılık)',
-    role: '+%200 Balık Bonusu',
     dropSource: 'Balıkçılık görevleri ve kıyı sandıkları',
     parts: 'Balıkçı Şapkası, Yelek, Pantolon',
     setBonus: 'Tam Sette %200 Ekstra Balıkçılık Bonusu',
@@ -283,78 +273,65 @@ export const LEGENDARY_WEAPONS = [
     name: 'Brits Golden M249',
     effect: 'Helikopterlere +%50 daha fazla hasar (+50% DMG to Helis)',
     ammo: '5.56 Rifle Ammo',
-    role: 'Heli Avcısı'
   },
   {
     name: 'Brits Golden AK',
     effect: 'Bradley radarı ve Bilim İnsanlarına +%30 hasar',
     ammo: '5.56 Rifle Ammo',
-    role: 'Monument & PvE Temizliği'
   },
   {
     name: 'The LAGINATOR',
     effect: 'Tam otomatik yüksek güçlü roketatar',
     ammo: '5.56 Rifle Ammo & Rockets',
-    role: 'Üs Yıkıcı / Raid Canavarı'
   },
   {
     name: 'Eoocoka',
     effect: 'Kese Bombası (Satchel) fırlatan eoka tabancası',
     ammo: 'Shotgun Shells & Satchel Charges',
-    role: 'Erken Oyun Kapı Kırıcı'
   },
   {
     name: 'Plaguepiercer',
     effect: 'Bilim İnsanlarına %500 devasa hasar',
     ammo: 'Arrows',
-    role: 'Deep Sea & Cobalt Katili'
   },
   {
     name: 'Ashmaker',
     effect: 'HV Roketi ateşleyen özel altıpatlar',
     ammo: 'Pistol Bullets & HV Rockets',
-    role: 'Mobil Ağır Topçu'
   },
   {
     name: 'Brits Boom Stick',
     effect: 'Altıpatlar ve roket mühimmatının hibrit füzyonu',
     ammo: '5.56 Rifle Ammo & Rockets',
-    role: 'Raid Desteği & Yıkım'
   },
   {
     name: 'Ace’s Python',
     effect: '50 mermilik şarjör, Helikopterlere +%30 hasar (Yumurta kostümünde +%20 ekstra)',
     ammo: '5.56 Rifle Ammo',
-    role: 'Hafif Heli Avcısı'
   },
   {
     name: 'Cluster Clutch',
     effect: 'F1 el bombaları fırlatan su borusu pompalı tüfek',
     ammo: 'Shotgun Shells & F1 Grenades',
-    role: 'Alan Temizliği'
   },
   {
     name: 'Brits Broken Eoka',
     effect: 'Pompalı mermisiyle helikopterlere tam +%500 Hasar!',
     ammo: 'Shotgun Shells',
-    role: 'Tek Vuruşta Heli İndirme'
   },
   {
     name: 'DoubleBoom',
     effect: 'Roket fırlatan çifte pompalı tüfek',
     ammo: 'Shotgun Shells & Rockets',
-    role: 'Yakın Mesafe Yıkım'
   },
   {
     name: 'Hydra’s Stolen Wand',
     effect: 'Doğrudan MLRS füzeleri fırlatan mistik asa',
     ammo: 'MLRS Rockets',
-    role: 'Kuşatma Asası'
   },
   {
     name: 'Huff-N-Puff',
     effect: 'Bradley tanklarını saniyeler içinde eriten özel dartlar fırlatır',
     ammo: 'HV Rockets & Special Darts',
-    role: 'Bradley Katili'
   }
 ];

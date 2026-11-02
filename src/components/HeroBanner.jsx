@@ -30,10 +30,10 @@ export default function HeroBanner({ onQuickFilter }) {
         {/* Quick Shortcut Tags */}
         <div className="flex flex-wrap gap-2.5 pt-1">
           <button
-            onClick={() => onQuickFilter('God-Tier')}
+            onClick={() => onQuickFilter('skills')}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sow-dark border border-sprout/40 text-xs font-semibold text-sprout hover:bg-sprout/10 transition-all shadow-sm"
           >
-            🏆 God-Tier Yetenekler
+            ⭐ Yetenek Ağacı
           </button>
           <button
             onClick={() => onQuickFilter('Harbinger')}

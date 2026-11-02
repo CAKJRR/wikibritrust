@@ -1,6 +1,6 @@
 import React from 'react';
 import { FARMING_DATA } from '../data/farming';
-import { Coins, CheckCircle2, TrendingUp, Sparkles } from 'lucide-react';
+import { Coins, TrendingUp, Sparkles } from 'lucide-react';
 
 export default function FarmingSection() {
   return (
@@ -11,17 +11,17 @@ export default function FarmingSection() {
         <div className="flex items-center gap-3 mb-2">
           <Coins className="w-5 h-5 text-sprout" />
           <h2 className="font-serif text-xl sm:text-2xl font-bold text-seedling">
-            En Hızlı RP (Para) Kasma Yöntemleri
+            RP (Para) Kazanma Metotları
           </h2>
         </div>
         <p className="text-sm text-seedling-muted leading-relaxed">
-          Brits PvE ekonomisinde mağazalardan (`/s`) helikopter, efsanevi anahtarlar ve nadir eşyalar satın almak için gereken milyonlarca RP'yi en hızlı şekilde kazanmanın 3 ana yolu.
+          Brits PvE ekonomisinde mağazalardan (`/s`) helikopter, efsanevi anahtarlar ve nadir eşyalar satın almak için RP kazanma yöntemleri.
         </p>
       </div>
 
       {/* Methods Cards */}
       <div className="space-y-6">
-        {FARMING_DATA.map((method, index) => (
+        {FARMING_DATA.map((method) => (
           <div
             key={method.id}
             className="rounded-3xl bg-sow-card border border-sow-border p-6 sm:p-8 hover:border-terracotta/40 transition-all duration-200 shadow-warm"
@@ -29,12 +29,9 @@ export default function FarmingSection() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-sow-border">
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sprout text-sow-dark">
-                    {method.tier}
-                  </span>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-terracotta/20 text-terracotta-light border border-terracotta/30">
-                    {method.tag}
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sow-dark border border-sow-border text-sprout">
+                    {method.category}
                   </span>
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-seedling">
