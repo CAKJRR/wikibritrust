@@ -70,9 +70,9 @@ export default function LegendarySection() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-sow-border/60 flex items-center justify-between text-xs">
-                  <span className="text-mist">Cephane:</span>
-                  <span className="font-mono text-sprout font-semibold">{wpn.ammo}</span>
+                <div className="pt-3 border-t border-sow-border/60 flex items-start justify-between gap-4 text-xs">
+                  <span className="text-mist shrink-0">Cephane:</span>
+                  <span className="font-mono text-sprout font-semibold text-right leading-relaxed">{wpn.ammo}</span>
                 </div>
               </div>
             ))}

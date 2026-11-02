@@ -131,19 +131,19 @@ export const LEGENDARY_WEAPONS = [
   {
     name: 'Brits Golden M249',
     effect: 'Helikopterlere +%50 daha fazla hasar (+50% DMG to Helis)',
-    ammo: '5.56 Rifle Ammo',
+    ammo: '5.56 Tüfek Mermisi (5.56 Rifle Ammo)',
     role: 'Heli Avcısı'
   },
   {
     name: 'Brits Golden AK',
     effect: 'Bradley radarı ve Bilim İnsanlarına +%30 hasar (Anti-Bradley radar & +30% DMG to scientists)',
-    ammo: '5.56 Rifle Ammo',
+    ammo: '5.56 Tüfek Mermisi (5.56 Rifle Ammo)',
     role: 'Monument & PvE Temizliği'
   },
   {
     name: 'The LAGINATOR',
     effect: 'Tam otomatik yüksek güçlü roketatar (Fully automatic high-powered rocket launcher)',
-    ammo: '5.56 Rifle Ammo & Roket',
+    ammo: '5.56 Tüfek Mermisi (5.56 Rifle Ammo) & Roket (Rocket)',
     role: 'Üs Yıkıcı / Raid Canavarı'
   },
   {
@@ -155,55 +155,55 @@ export const LEGENDARY_WEAPONS = [
   {
     name: 'Ashmaker',
     effect: 'HV Roketi ateşleyen özel altıpatlar (Revolver that shoots HVs)',
-    ammo: 'Tabanca Mermisi & HV Roket',
+    ammo: 'Tabanca Mermisi (Pistol Ammo) & HV Roket (HV Rocket)',
     role: 'Mobil Ağır Topçu'
   },
   {
     name: 'Brits Boom Stick',
     effect: 'Altıpatlar ve roket füzyonu (Fusion of revolver and rockets)',
-    ammo: '5.56 Rifle Ammo & Roket',
+    ammo: '5.56 Tüfek Mermisi (5.56 Rifle Ammo) & Roket (Rocket)',
     role: 'Raid Desteği'
   },
   {
     name: 'Ace’s Python',
     effect: '50 mermilik şarjör, Helikopterlere +%30 hasar (Yumurta kostümü giyiliyorsa +%20 ekstra)',
-    ammo: '5.56 Rifle Ammo',
+    ammo: '5.56 Tüfek Mermisi (5.56 Rifle Ammo)',
     role: 'Hafif Heli Avcısı'
   },
   {
     name: 'Brits Broken Eoka',
     effect: 'Helikopterlere tam +%500 Hasar! (+500% DMG to helis)',
-    ammo: 'Av Tüfeği Saçması (Shotgun shells)',
+    ammo: 'Av Tüfeği Saçması (Shotgun Shells)',
     role: 'Tek Vuruşta Heli Patlatma'
   },
   {
     name: 'DoubleBoom',
     effect: 'Roket fırlatan çifte pompalı tüfek (Double barrel shotgun that shoots rockets)',
-    ammo: 'Shotgun shells & Roket',
+    ammo: 'Av Tüfeği Saçması (Shotgun Shells) & Roket (Rocket)',
     role: 'Yakın Mesafe Yıkım'
   },
   {
     name: 'Cluster Clutch',
     effect: 'F1 el bombaları fırlatan su borusu pompalı tüfek (Shoots F1 grenades)',
-    ammo: 'Shotgun shells & F1 Bombası',
+    ammo: 'Av Tüfeği Saçması (Shotgun Shells) & F1 El Bombası (F1 Grenade)',
     role: 'Alan Temizliği'
   },
   {
     name: 'Hydra’s Stolen Wand',
     effect: 'Doğrudan MLRS füzeleri fırlatan mistik asa (Shoots MLRS)',
-    ammo: 'MLRS',
+    ammo: 'MLRS Roketi (MLRS Rocket)',
     role: 'Kuşatma Asası'
   },
   {
     name: 'Huff-N-Puff',
     effect: 'Bradley tanklarını saniyeler içinde eriten özel dartlar fırlatır',
-    ammo: 'HV Roket & Özel Dart',
+    ammo: 'HV Roket (HV Rocket) & Özel Dart (Special Dart)',
     role: 'Bradley Katili'
   },
   {
     name: 'Eooooka',
     effect: 'Satchel patlayıcısı fırlatan eoka tabancası (Satchel-charged eoka)',
-    ammo: 'Shotgun shells & Satchel Charge',
+    ammo: 'Av Tüfeği Saçması (Shotgun Shells) & Çanta Bombası (Satchel Charge)',
     role: 'Erken Oyun Kapı Kırıcı'
   }
 ];
