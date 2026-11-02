@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TREE_LAYOUTS } from '../data/treeLayouts';
 import { SKILLS_DATA } from '../data/skills';
-import { Sparkles, CheckCircle2, Info, Compass } from 'lucide-react';
+import { Sparkles, Compass } from 'lucide-react';
 
 export default function VisualTree({ activeTree, setActiveTree }) {
   const currentLayout = TREE_LAYOUTS[activeTree] || TREE_LAYOUTS.Gathercraft;
@@ -138,7 +138,7 @@ export default function VisualTree({ activeTree, setActiveTree }) {
           </div>
           <div className="flex items-center gap-2 text-mist text-[11px] font-mono">
             <Compass className="w-3.5 h-3.5 text-sprout" />
-            <span>İncelemek istediğiniz düğüme tıklayın</span>
+            <span>Detay için bir yeteneğe tıklayın</span>
           </div>
         </div>
 
@@ -296,14 +296,6 @@ export default function VisualTree({ activeTree, setActiveTree }) {
             </div>
           </div>
         )}
-
-        {/* Düğüm Durumu Bilgisi */}
-        <div className="pt-2">
-          <div className="w-full py-2.5 px-3 rounded-xl bg-sow-dark border border-sow-border text-mist text-xs font-mono text-center flex items-center justify-center gap-2">
-            <CheckCircle2 className="w-3.5 h-3.5 text-sprout" />
-            <span>Düğüm Aktif İnceleniyor ({activeTree})</span>
-          </div>
-        </div>
 
       </div>
 
