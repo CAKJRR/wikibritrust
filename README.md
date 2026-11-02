@@ -7,8 +7,6 @@
 
 ## 🎨 Tasarım & Renk Paleti
 
-Bu proje, yapay zeka klişelerinden uzak; rustik, organik ve oyunun doğasına uygun **Hannah Smith - Radish Counseling** paletiyle tasarlandı:
-
 * **Sow (`#392525` / `#211515`):** Derin, sıcak odunsu zemin
 * **Terracotta (`#B25D3E`):** Rustik kiremit ve sıcak bronz aksanlar
 * **Sprout (`#E3E890`):** Canlı filiz yeşili vurgular ve God-Tier rozetleri
