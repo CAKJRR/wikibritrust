@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PROGRESSION_GUIDES, ALL_OFFICIAL_GUIDES } from '../data/guides';
-import { ArrowLeft, ChevronRight, ExternalLink, Info, BookOpen, Compass, Sparkles } from 'lucide-react';
+import { ArrowLeft, ChevronRight, ExternalLink, Info, BookOpen } from 'lucide-react';
 
 const ACCENTS = {
   sprout: { 
@@ -13,7 +13,7 @@ const ACCENTS = {
     text: 'text-terracotta-light', 
     border: 'border-terracotta-light/40', 
     bg: 'bg-terracotta-light/10',
-    titleColor: 'text-[#f59e0b]' // Warm amber matching official INTERMEDIATE GUIDES
+    titleColor: 'text-terracotta-light'
   },
   terracotta: { 
     text: 'text-terracotta', 
@@ -34,7 +34,7 @@ export default function ProgressionSection({
   const category = PROGRESSION_GUIDES[stage] || PROGRESSION_GUIDES.early;
   const accent = ACCENTS[category.accent] || ACCENTS.sprout;
 
-  // Find guide across current category or fallback to all categories
+  // Rehberi aktif kategori veya tüm rehberler içinde bul
   const openGuide = activeGuideId 
     ? (
         category.guides.find((g) => g.id === activeGuideId) ||
@@ -75,13 +75,13 @@ export default function ProgressionSection({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // --- Official Right-Hand Guides Navigation Sidebar Widget ---
+  // --- Sağ Taraf Rehber Dizini Menüsü ---
   const renderGuidesSidebar = () => (
     <div className="bg-sow-card border border-sow-border rounded-2xl p-5 shadow-warm space-y-3 sticky top-20">
       <div className="flex items-center justify-between pb-3 border-b border-sow-border">
         <h4 className="font-serif text-lg font-bold text-seedling flex items-center gap-2">
           <BookOpen className="w-4 h-4 text-sprout" />
-          <span>Guides (Rehberler)</span>
+          <span>Rehber Dizini</span>
         </h4>
         <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-sow-dark border border-sow-border text-mist">
           {ALL_OFFICIAL_GUIDES.length}
@@ -102,7 +102,7 @@ export default function ProgressionSection({
               }`}
             >
               <span className="truncate">{item.title}</span>
-              <span className={`text-[10px] uppercase tracking-wider shrink-0 ml-2 px-1.5 py-0.5 rounded ${
+              <span className={`text-[10px] shrink-0 ml-2 px-1.5 py-0.5 rounded ${
                 isCurrent 
                   ? 'bg-seedling/20 text-seedling' 
                   : 'bg-sow-dark text-mist/60 group-hover:text-mist'
@@ -116,58 +116,6 @@ export default function ProgressionSection({
     </div>
   );
 
-  // --- INTERMEDIATE GUIDES Collection Component (User Explicit Request) ---
-  const renderIntermediateGuidesBlock = () => {
-    const midGuides = PROGRESSION_GUIDES.mid.guides;
-
-    return (
-      <div className="rounded-2xl bg-[#140f0d] border border-sow-border p-6 sm:p-7 shadow-warm space-y-5">
-        {/* Header matching user's screenshot media_1793592004008_8a1ce154.png */}
-        <div className="border-b border-sow-border/60 pb-4">
-          <h3 className="font-sans text-lg sm:text-xl font-black tracking-wider uppercase text-[#f59e0b]">
-            INTERMEDIATE GUIDES
-          </h3>
-          <p className="text-xs sm:text-sm text-seedling-muted mt-1 leading-relaxed">
-            Core systems: skills, food, quests, progression and world events.
-          </p>
-        </div>
-
-        {/* 3-Column Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {midGuides.map((guide) => {
-            const isCurrent = openGuide?.id === guide.id;
-
-            return (
-              <button
-                key={guide.id}
-                onClick={() => handleSelectGuide(guide.id, 'mid')}
-                className={`text-left cursor-pointer rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between gap-3 group ${
-                  isCurrent
-                    ? 'bg-sow border-sprout shadow-sm'
-                    : 'bg-[#1a1412] border-sow-border hover:border-terracotta/60 hover:bg-[#201815]'
-                }`}
-              >
-                <div>
-                  <h4 className="font-serif text-base sm:text-lg font-bold text-seedling group-hover:text-sprout transition-colors mb-2">
-                    {guide.title}
-                  </h4>
-                  <p className="text-xs text-seedling-muted leading-relaxed line-clamp-3">
-                    {guide.summary}
-                  </p>
-                </div>
-
-                <div className="pt-2 border-t border-sow-border/50 flex items-center justify-between text-[11px] font-semibold text-terracotta-light">
-                  <span>Rehberi İncele</span>
-                  <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
-
   // ==========================================================
   // 1. REHBER DETAY GÖRÜNÜMÜ (TEK REHBER OKUMA)
   // ==========================================================
@@ -175,8 +123,8 @@ export default function ProgressionSection({
     return (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        {/* Sol Ana Kolon (Detay + Alt Kategori Kartları) */}
-        <div className="lg:col-span-8 xl:col-span-9 space-y-8">
+        {/* Sol Ana Kolon */}
+        <div className="lg:col-span-8 xl:col-span-9 space-y-6">
           
           {/* Geri Dön Butonu */}
           <button
@@ -184,7 +132,7 @@ export default function ProgressionSection({
             className="inline-flex items-center gap-2 text-xs font-semibold text-mist hover:text-seedling transition-colors bg-sow-card px-3.5 py-2 rounded-xl border border-sow-border hover:border-terracotta/40"
           >
             <ArrowLeft className="w-4 h-4 text-sprout" />
-            <span>&larr; Tüm Rehberler Listesine Dön</span>
+            <span>&larr; Rehber Listesine Dön</span>
           </button>
 
           {/* Ana Rehber Dokümantasyon Kartı */}
@@ -259,14 +207,9 @@ export default function ProgressionSection({
             )}
           </article>
 
-          {/* KULLANICININ İSTEDİĞİ BÖLÜM: REHBERİN ALTINDAKİ INTERMEDIATE GUIDES BLOĞU */}
-          <div className="pt-4">
-            {renderIntermediateGuidesBlock()}
-          </div>
-
         </div>
 
-        {/* Sağ Kolon: Resmi "Guides" Hızlı Gezinme Widget'ı */}
+        {/* Sağ Kolon: Rehber Dizini Menüsü */}
         <aside className="lg:col-span-4 xl:col-span-3">
           {renderGuidesSidebar()}
         </aside>
@@ -282,9 +225,9 @@ export default function ProgressionSection({
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       {/* Sol Ana Kolon */}
-      <div className="lg:col-span-8 xl:col-span-9 space-y-8">
+      <div className="lg:col-span-8 xl:col-span-9 space-y-6">
         
-        {/* Kategori Başlık Banner'ı (Resmi Başlık Stili) */}
+        {/* Kategori Başlık Banner'ı */}
         <div className={`rounded-2xl bg-sow-card border ${accent.border} px-6 py-6 shadow-warm`}>
           <h2 className="font-sans text-xl sm:text-2xl font-black tracking-wider uppercase text-seedling">
             <span className={accent.titleColor}>{category.categoryLead}</span> {category.categoryTail}
@@ -292,7 +235,7 @@ export default function ProgressionSection({
           <p className="text-xs sm:text-sm text-seedling-muted leading-relaxed mt-2">{category.subtitle}</p>
         </div>
 
-        {/* Kartlar Izgarası */}
+        {/* Kartlar Izgarası (Sade ve Temiz) */}
         {guides.length === 0 ? (
           <div className="rounded-2xl bg-sow-card border border-sow-border p-8 text-center text-sm text-mist">
             "{searchQuery}" ile eşleşen bir rehber bulunamadı.
@@ -310,7 +253,7 @@ export default function ProgressionSection({
                     <h3 className="font-serif text-base sm:text-lg font-bold text-seedling leading-snug group-hover:text-sprout transition-colors">
                       {guide.title}
                     </h3>
-                    <span className={`text-[10px] font-bold tracking-wide px-2 py-0.5 rounded-md bg-sow-dark ${accent.text} border border-sow-border shrink-0`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md bg-sow-dark ${accent.text} border border-sow-border shrink-0`}>
                       {guide.badge}
                     </span>
                   </div>
@@ -326,16 +269,9 @@ export default function ProgressionSection({
           </div>
         )}
 
-        {/* Eğer Early veya Endgame sayfasındaysak, altta Intermediate Guides bloğunu da göster */}
-        {stage !== 'mid' && (
-          <div className="pt-6">
-            {renderIntermediateGuidesBlock()}
-          </div>
-        )}
-
       </div>
 
-      {/* Sağ Kolon: Resmi "Guides" Menü Kutusu */}
+      {/* Sağ Kolon: Rehber Dizini Menüsü */}
       <aside className="lg:col-span-4 xl:col-span-3">
         {renderGuidesSidebar()}
       </aside>
