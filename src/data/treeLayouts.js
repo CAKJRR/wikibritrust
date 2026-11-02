@@ -5,7 +5,7 @@ export const TREE_LAYOUTS = {
   Gathercraft: {
     name: 'Gathercraft',
     hubLabel: 'GATHERCRAFT',
-    color: '#B25D3E',
+    color: '#ce422b',
     nodes: [
       // Mining (Sol Dal)
       { id: 'ore-sense', x: 34, y: 50, name: 'Ore Sense', icon: '📡', rank: '0/1', cost: '5 SP' },
@@ -70,7 +70,7 @@ export const TREE_LAYOUTS = {
   Survivalcraft: {
     name: 'Survivalcraft',
     hubLabel: 'SURVIVALCRAFT',
-    color: '#E3E890',
+    color: '#22c55e',
     nodes: [
       // Health / Healing (Üst Dal)
       { id: 'inspired-decor', x: 50, y: 32, name: 'Inspired Decor', icon: '🛋️', rank: '0/3', cost: '1 SP' },
@@ -142,7 +142,7 @@ export const TREE_LAYOUTS = {
   Combat: {
     name: 'Combat',
     hubLabel: 'COMBAT',
-    color: '#B25D3E',
+    color: '#ef4444',
     nodes: [
       // Explosives & Raid (Üst Dal)
       { id: 'shockwave', x: 50, y: 30, name: 'Shockwave', icon: '💥', rank: '0/3', cost: '1 SP' },
@@ -207,7 +207,7 @@ export const TREE_LAYOUTS = {
   Vehicles: {
     name: 'Vehicles',
     hubLabel: 'VEHICLES',
-    color: '#728383',
+    color: '#38bdf8',
     nodes: [
       { id: 'gas-guru', x: 50, y: 22, name: 'Gas Guru', icon: '⛽', rank: '0/3', cost: '1 SP' },
       { id: 'efficient-equestrian', x: 26, y: 50, name: 'Efficient Equestrian', icon: '🐎', rank: '0/1', cost: '1 SP' },
