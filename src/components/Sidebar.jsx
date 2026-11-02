@@ -29,6 +29,8 @@ export default function Sidebar({
   setActiveTab,
   selectedTree,
   setSelectedTree,
+  activeGuideId,
+  setActiveGuideId,
   searchQuery,
   setSearchQuery,
   mobileOpen,
@@ -59,6 +61,7 @@ export default function Sidebar({
 
   const handleNavClick = (id) => {
     setActiveTab(id);
+    if (setActiveGuideId) setActiveGuideId(null);
     setMobileOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -166,6 +169,7 @@ export default function Sidebar({
               desc: g.summary,
               action: () => {
                 setActiveTab(stage);
+                if (setActiveGuideId) setActiveGuideId(g.id);
                 setMobileOpen(false);
               }
             });
