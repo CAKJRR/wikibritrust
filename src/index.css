@@ -25,3 +25,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #B25D3E;
 }
+
+/* Hand (sürükle-kaydır) alanlarında kaydırma çubuğunu gizle */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

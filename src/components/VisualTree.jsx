@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TREE_LAYOUTS } from '../data/treeLayouts';
 import { SKILLS_DATA } from '../data/skills';
 import { Sparkles, Compass } from 'lucide-react';
@@ -16,6 +16,47 @@ export default function VisualTree({ activeTree, setActiveTree }) {
 
   // Match the selected node with its full skill data
   const selectedSkill = SKILLS_DATA.find((s) => s.id === selectedNodeId) || SKILLS_DATA[0];
+
+  // --- Hand (sürükle-kaydır) davranışı ---
+  const viewportRef = useRef(null);
+  const hasDraggedRef = useRef(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleMouseDown = (e) => {
+    if (e.button !== 0) return;
+    const el = viewportRef.current;
+    if (!el) return;
+
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const startLeft = el.scrollLeft;
+    const startTop = el.scrollTop;
+    hasDraggedRef.current = false;
+
+    const onMove = (ev) => {
+      const dx = ev.clientX - startX;
+      const dy = ev.clientY - startY;
+      if (!hasDraggedRef.current && Math.abs(dx) + Math.abs(dy) > 5) {
+        hasDraggedRef.current = true;
+        setIsDragging(true);
+      }
+      if (hasDraggedRef.current) {
+        el.scrollLeft = startLeft - dx;
+        el.scrollTop = startTop - dy;
+      }
+    };
+
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      setIsDragging(false);
+      // Sürükleme sonrası oluşan click olayı yeteneği seçmesin
+      setTimeout(() => { hasDraggedRef.current = false; }, 0);
+    };
+
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+  };
 
   const getNodePos = (id) => {
     if (id === 'hub') return { x: 50, y: 50 };
@@ -116,7 +157,7 @@ export default function VisualTree({ activeTree, setActiveTree }) {
     <div className="flex flex-col xl:flex-row gap-6 items-start">
       
       {/* --- SOL ALAN: OYUN İÇİ HARİTA GÖRÜNÜMÜ --- */}
-      <div className="w-full xl:flex-1 bg-sow-card/95 border border-sow-border rounded-3xl p-4 sm:p-6 shadow-warm relative overflow-x-auto min-h-[960px] select-none">
+      <div className="w-full xl:flex-1 min-w-0 bg-sow-card/95 border border-sow-border rounded-3xl p-4 sm:p-6 shadow-warm relative overflow-hidden select-none">
         
         {/* Rust Stili Arka Plan Noktaları */}
         <div 
@@ -138,12 +179,20 @@ export default function VisualTree({ activeTree, setActiveTree }) {
           </div>
           <div className="flex items-center gap-2 text-mist text-[11px] font-mono">
             <Compass className="w-3.5 h-3.5 text-sprout" />
-            <span>Detay için bir yeteneğe tıklayın</span>
+            <span>Detay için bir yeteneğe tıklayın • Haritayı sürükleyerek gezin</span>
           </div>
         </div>
 
+        {/* Sürüklenebilir Görüntü Alanı (Hand / Pan: sağ-sol-yukarı-aşağı) */}
+        <div
+          ref={viewportRef}
+          onMouseDown={handleMouseDown}
+          className={`relative mt-4 h-[640px] overflow-auto no-scrollbar rounded-2xl ${
+            isDragging ? 'cursor-grabbing' : 'cursor-grab'
+          }`}
+        >
         {/* Harita Düzlemi (Ferah ve Geniş: min-w-[980px] h-[860px]) */}
-        <div className="relative w-full min-w-[980px] h-[860px] mt-4">
+        <div className="relative w-full min-w-[980px] h-[860px]">
           
           {/* Bağlantı Çizgileri */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -188,8 +237,12 @@ export default function VisualTree({ activeTree, setActiveTree }) {
             return (
               <div
                 key={node.id}
-                onClick={() => setSelectedNodeId(node.id)}
-                className="absolute -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center cursor-pointer group"
+                onClick={() => {
+                  if (!hasDraggedRef.current) setSelectedNodeId(node.id);
+                }}
+                className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center group ${
+                  isDragging ? 'cursor-grabbing' : 'cursor-pointer'
+                }`}
                 style={{ left: `${node.x}%`, top: `${node.y}%` }}
               >
                 {/* Elmas Kutu */}
@@ -226,6 +279,7 @@ export default function VisualTree({ activeTree, setActiveTree }) {
             );
           })}
 
+        </div>
         </div>
 
       </div>
