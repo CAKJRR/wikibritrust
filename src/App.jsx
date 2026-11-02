@@ -68,7 +68,7 @@ export default function App() {
             <PlaySection setActiveTab={setActiveTab} />
           )}
 
-          {/* Yetenek Ağacı (Oyun İçi Düğüm Haritası + Kartlar) */}
+          {/* Yetenek Ağacı (Oyun İçi Yetenek Haritası + Kartlar) */}
           {activeTab === 'skills' && (
             <SkillSection
               searchQuery={searchQuery}

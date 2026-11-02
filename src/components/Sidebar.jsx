@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Home, 
   Swords, 
@@ -14,9 +14,15 @@ import {
   Truck, 
   Search, 
   X, 
-  ChevronDown 
+  ChevronDown,
+  ArrowRight
 } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
+
+import { SKILLS_DATA } from '../data/skills';
+import { PROGRESSION_GUIDES } from '../data/guides';
+import { LEGENDARY_WEAPONS, LEGENDARY_TOOLS, LEGENDARY_SETS } from '../data/legendary';
+import { COMMANDS_DATA } from '../data/commands';
 
 export default function Sidebar({
   activeTab,
@@ -68,6 +74,130 @@ export default function Sidebar({
     }
   };
 
+  // --- Kapsamlı Anlık Arama Dizini (Tüm Sitede Canlı Arama) ---
+  const query = searchQuery.trim().toLocaleLowerCase('tr');
+
+  const searchResults = useMemo(() => {
+    if (query.length < 2) return [];
+
+    const results = [];
+
+    // 1. Efsanevi Silahlar & Aletler
+    LEGENDARY_WEAPONS.forEach((w) => {
+      if (
+        w.name.toLocaleLowerCase('tr').includes(query) ||
+        w.effect?.toLocaleLowerCase('tr').includes(query) ||
+        w.role?.toLocaleLowerCase('tr').includes(query)
+      ) {
+        results.push({
+          id: `wpn-${w.name}`,
+          title: w.name,
+          category: 'Efsanevi Silah',
+          badge: w.role,
+          desc: w.effect,
+          action: () => {
+            setActiveTab('legendary');
+            setMobileOpen(false);
+          }
+        });
+      }
+    });
+
+    LEGENDARY_TOOLS.forEach((t) => {
+      if (
+        t.name.toLocaleLowerCase('tr').includes(query) ||
+        t.effect?.toLocaleLowerCase('tr').includes(query)
+      ) {
+        results.push({
+          id: `tool-${t.name}`,
+          title: t.name,
+          category: 'Efsanevi Alet',
+          badge: 'Alet',
+          desc: t.effect,
+          action: () => {
+            setActiveTab('legendary');
+            setMobileOpen(false);
+          }
+        });
+      }
+    });
+
+    // 2. Yetenekler
+    SKILLS_DATA.forEach((s) => {
+      if (
+        s.name.toLocaleLowerCase('tr').includes(query) ||
+        s.desc?.toLocaleLowerCase('tr').includes(query) ||
+        s.benefit?.toLocaleLowerCase('tr').includes(query)
+      ) {
+        results.push({
+          id: `skill-${s.id}`,
+          title: s.name,
+          category: `Yetenek (${s.tree})`,
+          badge: s.tier,
+          desc: s.benefit || s.desc,
+          action: () => {
+            setActiveTab('skills');
+            if (setSelectedTree) setSelectedTree(s.tree);
+            setMobileOpen(false);
+          }
+        });
+      }
+    });
+
+    // 3. Rehberler
+    ['early', 'mid', 'endgame'].forEach((stage) => {
+      const cat = PROGRESSION_GUIDES[stage];
+      if (cat?.guides) {
+        cat.guides.forEach((g) => {
+          if (
+            g.title.toLocaleLowerCase('tr').includes(query) ||
+            g.summary?.toLocaleLowerCase('tr').includes(query) ||
+            g.sections?.some(
+              (sec) =>
+                sec.heading?.toLocaleLowerCase('tr').includes(query) ||
+                sec.items?.some((it) => it.toLocaleLowerCase('tr').includes(query))
+            )
+          ) {
+            results.push({
+              id: `guide-${g.id}`,
+              title: g.title,
+              category: `${cat.categoryLead} Rehberi`,
+              badge: g.badge,
+              desc: g.summary,
+              action: () => {
+                setActiveTab(stage);
+                setMobileOpen(false);
+              }
+            });
+          }
+        });
+      }
+    });
+
+    // 4. Komutlar
+    COMMANDS_DATA.forEach((c) => {
+      if (
+        c.cmd.toLocaleLowerCase('tr').includes(query) ||
+        c.name.toLocaleLowerCase('tr').includes(query) ||
+        c.desc.toLocaleLowerCase('tr').includes(query)
+      ) {
+        results.push({
+          id: `cmd-${c.cmd}`,
+          title: c.cmd,
+          category: 'Sunucu Komutu',
+          badge: c.name,
+          desc: c.desc,
+          action: () => {
+            setActiveTab('commands');
+            setMobileOpen(false);
+          }
+        });
+      }
+    });
+
+    return results.slice(0, 8);
+  }, [query, setActiveTab, setSelectedTree, setMobileOpen]);
+
   const content = (
     <div className="flex flex-col h-full bg-sow-card/95 backdrop-blur-md border-r border-sow-border select-none">
       
@@ -106,18 +236,64 @@ export default function Sidebar({
         </button>
       </div>
 
-      {/* Search Input in Sidebar */}
-      <div className="p-3 border-b border-sow-border/60">
+      {/* Search Input in Sidebar (Sitedeki Tek ve Güçlü Arama Çubuğu) */}
+      <div className="p-3 border-b border-sow-border/60 relative">
         <div className="relative">
           <Search className="w-3.5 h-3.5 text-mist absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Rehberde ara..."
+            placeholder="Rehberde, silahta, yetenekte ara..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-sow-dark border border-sow-border rounded-xl pl-8 pr-3 py-2 text-xs text-seedling placeholder-mist/70 focus:outline-none focus:border-terracotta focus:ring-1 focus:ring-terracotta transition-all"
+            className="w-full bg-sow-dark border border-sow-border rounded-xl pl-8 pr-7 py-2 text-xs text-seedling placeholder-mist/70 focus:outline-none focus:border-terracotta focus:ring-1 focus:ring-terracotta transition-all"
           />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-mist hover:text-seedling p-0.5 rounded"
+              title="Temizle"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
+
+        {/* Canlı Arama Sonuçları Açılır Paneli */}
+        {searchResults.length > 0 && (
+          <div className="absolute left-3 right-3 top-full mt-1.5 z-50 bg-sow-card border border-terracotta/40 rounded-2xl shadow-2xl overflow-hidden max-h-80 overflow-y-auto divide-y divide-sow-border/60 animate-in fade-in slide-in-from-top-2 duration-150">
+            <div className="px-3 py-1.5 bg-sow-dark text-[10px] font-mono font-bold text-sprout flex items-center justify-between">
+              <span>CANLI ARAMA SONUÇLARI</span>
+              <span className="text-mist font-normal">{searchResults.length} sonuç</span>
+            </div>
+
+            {searchResults.map((res) => (
+              <div
+                key={res.id}
+                onClick={() => {
+                  res.action();
+                }}
+                className="p-2.5 hover:bg-sow cursor-pointer transition-colors group flex items-start justify-between gap-2"
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-seedling group-hover:text-terracotta-light transition-colors truncate">
+                      {res.title}
+                    </span>
+                    <span className="text-[9px] font-mono px-1 py-0.2 rounded bg-sow-dark text-mist border border-sow-border shrink-0">
+                      {res.category}
+                    </span>
+                  </div>
+                  {res.desc && (
+                    <p className="text-[10px] text-seedling-muted truncate mt-0.5">
+                      {res.desc}
+                    </p>
+                  )}
+                </div>
+                <ArrowRight className="w-3 h-3 text-mist group-hover:text-sprout shrink-0 mt-1" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Main Navigation Links */}
@@ -204,7 +380,7 @@ export default function Sidebar({
           )}
         </div>
 
-        {/* 4. REHBERLER (Ana Menü - Accordion Açılır Kapanır) */}
+        {/* 4. REHBERLER (Accordion Açılır Kapanır) */}
         <div className="space-y-1">
           <button
             onClick={handleGuidesMainClick}
@@ -287,24 +463,16 @@ export default function Sidebar({
 
       </div>
 
-      {/* Footer Profile / Instagram */}
-      <div className="p-3 border-t border-sow-border bg-sow-dark/70">
+      {/* Minimalist Footer Creator Tag (Sade, Dikkat Çekmeyen Tek Satır) */}
+      <div className="p-3 border-t border-sow-border/60 text-center">
         <a
           href="https://www.instagram.com/cakjrr"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center justify-between p-2.5 rounded-xl bg-sow-card border border-sow-border hover:border-terracotta/50 transition-all group"
+          className="inline-flex items-center gap-1.5 text-[11px] text-mist hover:text-seedling transition-colors"
         >
-          <div className="flex items-center gap-2.5">
-            <InstagramIcon className="w-4 h-4 text-terracotta-light group-hover:text-sprout transition-colors" />
-            <div className="text-left">
-              <span className="text-[11px] font-bold text-seedling block leading-tight">CAKJRR</span>
-              <span className="text-[10px] text-mist block">@cakjrr</span>
-            </div>
-          </div>
-          <span className="text-[10px] font-bold text-sprout bg-sprout/10 px-2 py-0.5 rounded-md border border-sprout/20">
-            Instagram
-          </span>
+          <InstagramIcon className="w-3.5 h-3.5 text-terracotta-light" />
+          <span>@cakjrr</span>
         </a>
       </div>
 

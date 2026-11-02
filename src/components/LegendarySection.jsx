@@ -2,8 +2,48 @@ import React, { useState } from 'react';
 import { DURABILITY_GUIDE, LEGENDARY_TOOLS, LEGENDARY_SETS, LEGENDARY_WEAPONS } from '../data/legendary';
 import { Sparkles, ShieldCheck, Crosshair, Wrench, Pickaxe, Shield, Swords } from 'lucide-react';
 
-export default function LegendarySection() {
+export default function LegendarySection({ searchQuery = '' }) {
   const [subTab, setSubTab] = useState('weapons');
+  const query = searchQuery.trim().toLocaleLowerCase('tr');
+
+  const filteredWeapons = query
+    ? LEGENDARY_WEAPONS.filter(
+        (w) =>
+          w.name.toLocaleLowerCase('tr').includes(query) ||
+          w.role.toLocaleLowerCase('tr').includes(query) ||
+          w.effect.toLocaleLowerCase('tr').includes(query) ||
+          w.ammo.toLocaleLowerCase('tr').includes(query)
+      )
+    : LEGENDARY_WEAPONS;
+
+  const filteredTools = query
+    ? LEGENDARY_TOOLS.filter(
+        (t) =>
+          t.name.toLocaleLowerCase('tr').includes(query) ||
+          t.category.toLocaleLowerCase('tr').includes(query) ||
+          t.effect.toLocaleLowerCase('tr').includes(query) ||
+          t.location.toLocaleLowerCase('tr').includes(query)
+      )
+    : LEGENDARY_TOOLS;
+
+  const filteredSets = query
+    ? LEGENDARY_SETS.filter(
+        (s) =>
+          s.name.toLocaleLowerCase('tr').includes(query) ||
+          s.role.toLocaleLowerCase('tr').includes(query) ||
+          s.desc.toLocaleLowerCase('tr').includes(query) ||
+          s.setBonus.toLocaleLowerCase('tr').includes(query)
+      )
+    : LEGENDARY_SETS;
+
+  // Auto-switch subtab if query matches only another subtab
+  React.useEffect(() => {
+    if (query) {
+      if (filteredWeapons.length > 0 && subTab !== 'weapons') setSubTab('weapons');
+      else if (filteredWeapons.length === 0 && filteredTools.length > 0 && subTab !== 'tools') setSubTab('tools');
+      else if (filteredWeapons.length === 0 && filteredTools.length === 0 && filteredSets.length > 0 && subTab !== 'sets') setSubTab('sets');
+    }
+  }, [query]);
 
   const tabs = [
     { id: 'weapons', label: 'Efsanevi Silahlar (13)', icon: Swords },

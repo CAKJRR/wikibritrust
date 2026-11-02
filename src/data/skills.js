@@ -12,9 +12,9 @@ export const SKILLS_DATA = [
     tier: 'B-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '200m Ore Radar',
-    desc: '200 metre çapındaki tüm maden nodlarını (Taş, Metal, Kükürt, HQM) haritada ve ekranda işaretler.',
-    synergy: 'Maden arama süresini kısaltır; Prospector ve Shatterpoint ile birleştiğinde hızlı rota oluşturur.'
+    benefit: '200m Maden Radarı',
+    desc: '200 metre çapındaki tüm maden kaynaklarını (Taş, Metal, Kükürt, HQM) haritada ve ekranda işaretler.',
+    synergy: 'Maden arama süresini kısaltır; Prospector ve Shatterpoint ile birleştiğinde hızlı farm rotası oluşturur.'
   },
   {
     id: 'prospector',
@@ -23,8 +23,8 @@ export const SKILLS_DATA = [
     category: 'Mining',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+75% Ore Yield',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '+%75 Ekstra Maden Verimi',
     desc: 'Kazılan madenlerden (Taş, Metal, Kükürt, HQM) %75 daha fazla cevher elde edilmesini sağlar.',
     synergy: 'Sülfür ve HQM madenlerinde cephane ve zırh üretimini doğrudan katlar.'
   },
@@ -35,8 +35,8 @@ export const SKILLS_DATA = [
     category: 'Mining',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '35% Instant Node Respawn',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '%35 Anında Maden Yenilenmesi',
     desc: 'Kırılan maden nodunun %35 şansla aynı noktada anında yeniden doğmasını sağlar.',
     synergy: 'Aynı noktada art arda nod kırarak yer değiştirmeden hızlıca çanta doldurabilirsiniz.'
   },
@@ -48,7 +48,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '100% Auto Hotspot',
+    benefit: '%100 Otomatik Kritik Vuruş (Hotspot)',
     desc: 'Madenlerdeki parlayan noktaya (hotspot) nişan alma zorunluluğunu kaldırır. Her vuruş otomatik kritik sayılır.',
     synergy: 'Shatterpoint ile birleştiğinde madene doğrudan vurup anında tek vuruşta kırabilirsiniz.'
   },
@@ -60,7 +60,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '100% Instant 1-hit Mine',
+    benefit: 'Tek Vuruşta Anında Maden Kırma',
     desc: 'Maden nodlarına (Taş, Metal, Kükürt, HQM) tek vuruşta kırma özelliği verir. Kazma süresini ortadan kaldırır.',
     synergy: 'Vein Seeker + Second Strike + Prospector ile maden kasmayı en üst hıza taşır.'
   },
@@ -71,8 +71,8 @@ export const SKILLS_DATA = [
     category: 'Mining',
     tier: 'A-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-45% Pickaxe Wear',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '-%45 Kazma ve Jackhammer Aşınması',
     desc: 'Kazmaların ve Jackhammer\'ların kullanım sırasında aşınmasını %45 azaltır.',
     synergy: 'Mad’s Magical ve standart kazmaların tamir aralığını iki katına çıkarır.'
   },
@@ -86,7 +86,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: 'Auto Dig Stash',
+    benefit: 'Gizli Zulaları Otomatik Çıkarma',
     desc: 'Gömülü küçük zulaları (Small Stash) ve gizli hazineleri otomatik olarak ortaya çıkarır.',
     synergy: 'Monumentlerde ve yol kenarında gizlenmiş eşyaları kaçırmadan toplamayı sağlar.'
   },
@@ -98,7 +98,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '1-Hit Auto Loot Barrels',
+    benefit: 'Varilleri Tek Vuruşta Otomatik Toplama',
     desc: 'Yoldaki ve anıtlardaki varilleri tek vuruşta kırar; çıkan hurda ve bileşenleri otomatik çantaya çeker.',
     synergy: 'Salvage King (4x Scrap) ve Parts Hunter ile yol boyu hurda toplamayı hızlandırır.'
   },
@@ -109,8 +109,8 @@ export const SKILLS_DATA = [
     category: 'Scavenging',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '45% Component Dupe',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '%45 Bileşen Çoğaltma (Dupe)',
     desc: 'Sandıklardan ve varillerden çıkan bileşenleri (yay, dişli, boru vb.) %45 ihtimalle ikiye katlar.',
     synergy: 'Geri dönüştürücüye (Recycler) atıldığında ekstra hurda ve HQM girdisi sağlar.'
   },
@@ -121,8 +121,8 @@ export const SKILLS_DATA = [
     category: 'Scavenging',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+300% Scrap (4x Scrap)',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '4 Kat Hurda (Varillerden +%300 Scrap)',
     desc: 'Varillerden ve sandıklardan 4 kat daha fazla hurda (Scrap) verir.',
     synergy: 'Wipe başında teknoloji ağacını (Tech Tree) çok daha erken tamamlamanızı sağlar.'
   },
@@ -135,8 +135,8 @@ export const SKILLS_DATA = [
     category: 'Woodcutting',
     tier: 'B-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-45% Axe Wear',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '-%45 Balta ve Testere Aşınması',
     desc: 'Baltaların ve testerelerin kullanım sırasında aşınmasını %45 azaltır.',
     synergy: 'Baltaların ömrünü uzatarak tamir masasına gitme sıklığını düşürür.'
   },
@@ -147,8 +147,8 @@ export const SKILLS_DATA = [
     category: 'Woodcutting',
     tier: 'A-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+75% Wood Yield',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '+%75 Ekstra Odun Verimi',
     desc: 'Ağaç keserken elde edilen odun miktarını %75 artırır.',
     synergy: 'Büyük üs inşaatlarında ve fırın yakıtında odun tasarrufu sağlar.'
   },
@@ -159,8 +159,8 @@ export const SKILLS_DATA = [
     category: 'Woodcutting',
     tier: 'B-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '5% Chance 3-5 Trees Regrow',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '%5 Şansla 3-5 Yeni Ağaç Çıkması',
     desc: 'Bir ağaç kesildiğinde %5 şansla etrafında anında 3 ila 5 yeni ağaç bitmesini sağlar.',
     synergy: 'Üs etrafında odun kaynağının tükenmesini engeller.'
   },
@@ -172,7 +172,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '100% Instant 1-hit Tree',
+    benefit: 'Ağaçları Tek Vuruşta Devirme',
     desc: 'Ağaçlara tek vuruşta devirme özelliği kazandırır.',
     synergy: 'Clearcut ile zincirleme odun hasadında temel oluşturur.'
   },
@@ -184,7 +184,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '35% Chain Harvest (10m)',
+    benefit: '%35 Şansla Çevre Ağaçları Zincirleme Hasat',
     desc: 'Bir ağaç devrildiğinde %35 şansla 10 metre yarıçaptaki çevre ağaçları da tek seferde hasat eder.',
     synergy: 'Felling Blow ile birlikte fırınlar için gereken odun ihtiyacını çok hızlı karşılar.'
   },
@@ -197,8 +197,8 @@ export const SKILLS_DATA = [
     category: 'Scavenging',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-2.5s Recycler Tick',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '2 Kat Hızlı Geri Dönüşüm (-2.5s Süre)',
     desc: 'Geri dönüştürücünün çalışma hızını artırır; bileşenleri çok daha kısa sürede eritir.',
     synergy: 'Outpost veya Güvenli Bölgede hurda eritirken bekleme süresini azaltır.'
   },
@@ -209,8 +209,8 @@ export const SKILLS_DATA = [
     category: 'Foraging',
     tier: 'A-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+225% Wild Yield',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '+%225 Yabani Kenevir, Mantar ve Meyve Verimi',
     desc: 'Doğada kendiliğinden yetişen yabani kenevir, mantar ve meyvelerden +%225 ekstra verim verir.',
     synergy: 'Wipe başında kumaş ve yatak ihtiyacını ilk dakikalarda çözer.'
   },
@@ -222,7 +222,7 @@ export const SKILLS_DATA = [
     tier: 'C-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: 'Wild Collectables Radar',
+    benefit: 'Yabani Bitki ve Kaynak Radarı',
     desc: 'Çevredeki yabani bitkileri ve toplanabilir kaynakları ekranda işaretler.',
     synergy: 'Kenevir ve mantar ararken haritada gezinmeyi kolaylaştırır.'
   },
@@ -233,8 +233,8 @@ export const SKILLS_DATA = [
     category: 'Fishing',
     tier: 'C-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: 'Increased Fish Catch Rate',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Nadir Balık Tutma Şansında Büyük Artış',
     desc: 'Balık tutarken daha nadir ve yüksek seviye balık yakalama şansını artırır.',
     synergy: 'Balıkçılık görevlerinde ve hurda takasında kullanılır.'
   },
@@ -245,9 +245,9 @@ export const SKILLS_DATA = [
     category: 'Fishing',
     tier: 'C-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: 'Reduced Line Snap Chance',
-    desc: 'Olta misinasının kopma ihtimalini azaltır.',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Olta Misinası Kopma Riskinde Azalma',
+    desc: 'Olta misinasının kopma ihtimalini büyük oranda azaltır.',
     synergy: 'Büyük köpekbalığı ve nadir balıkları kaçırmadan çekmeyi sağlar.'
   },
   {
@@ -258,7 +258,7 @@ export const SKILLS_DATA = [
     tier: 'B-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: 'Shared Tea Buff to Team',
+    benefit: 'İçilen Çay Etkisini Takımla Paylaşma',
     desc: 'İçtiğiniz çayın buff etkisini yakındaki takım arkadaşlarınıza da kısmen yansıtır.',
     synergy: 'Ekip halinde maden veya hurda farmına çıkarken çay tasarrufu sağlar.'
   },
@@ -275,8 +275,8 @@ export const SKILLS_DATA = [
     category: 'Health',
     tier: 'A-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '100% Comfort in TC',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'TC (Yetki) Alanında Sürekli %100 Konfor',
     desc: 'Yetki sahibi olduğunuz Tool Cupboard (TC) menzilinde daima %100 konfor (Comfort) sağlar.',
     synergy: 'Üssün içinde ateş yakmadan maksimum can yenilenmesini aktif tutar.'
   },
@@ -288,7 +288,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+0.5 Health per Second',
+    benefit: 'Saniyede +0.5 Pasif Can Yenilenmesi',
     desc: 'Saniyede 0.5 can pasif olarak kendiliğinden yenilenir.',
     synergy: 'Çatışma aralarında ve zehirlenmelerde bandaj harcamadan canı yüksek tutar.'
   },
@@ -300,7 +300,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '50% Self Revive When Downed',
+    benefit: 'Yere Düşünce %50 Şansla Kendi Kendine Doğrulma',
     desc: 'Yere düştüğünüzde (Wounded) %50 şansla kendi kendinize anında ayağa kalkmanızı sağlar.',
     synergy: 'Solo PvE zindanlarında veya boss dövüşlerinde hayat kurtarır.'
   },
@@ -312,8 +312,8 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '100% Fall Damage Immunity',
-    desc: 'Düşme hasarına karşı %100 bağışıklık sağlar. Yüksek anıtlardan veya dağlardan atlasanız bile hasar almazsınız.',
+    benefit: '%100 Düşme Hasarı Bağışıklığı',
+    desc: 'Düşme hasarına karşı %100 bağışıklık sağlar. Yüksek anıtlardan veya dağlardan atlasanız bile sıfır hasar alırsınız.',
     synergy: 'Monument çatılarından inişlerde ve helikopter atlayışlarında can kaybını sıfırlar.'
   },
   {
@@ -324,7 +324,7 @@ export const SKILLS_DATA = [
     tier: 'C-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: 'Shared Healing to Nearby Allies',
+    benefit: 'Takım Arkadaşlarına Pasif Can Paylaşımı',
     desc: 'Pasif can yenilemenizin bir kısmını yakındaki takım arkadaşlarınıza paylaştırır.',
     synergy: 'Ekip çatışmalarında pasif destek sağlar.'
   },
@@ -337,8 +337,8 @@ export const SKILLS_DATA = [
     category: 'Hunting',
     tier: 'B-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-45% Knife Wear',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '-%45 Bıçak Aşınması',
     desc: 'Kemik ve av bıçaklarının kullanım sırasında aşınmasını %45 azaltır.',
     synergy: 'Bıçakların ömrünü uzatır.'
   },
@@ -349,8 +349,8 @@ export const SKILLS_DATA = [
     category: 'Hunting',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+75% Skinning Yield',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '+%75 Ekstra Hayvan Derisi ve Yağı',
     desc: 'Hayvan derisi yüzerken %75 daha fazla deri, hayvan yağı ve kemik verir.',
     synergy: 'Ayı avlayarak Low Grade Fuel ve kemik ihtiyacını karşılamayı hızlandırır.'
   },
@@ -362,7 +362,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '25% Instant Skin Animal',
+    benefit: '%25 Şansla Tek Vuruşta Hayvan Yüzme',
     desc: 'Hayvan cesedine vurduğunuzda %25 şansla tek vuruşta tüm hayvanı anında derisiyle hasat eder.',
     synergy: 'Waste Not ile birlikte hayvan farmını hızlandırır.'
   },
@@ -374,7 +374,7 @@ export const SKILLS_DATA = [
     tier: 'C-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: 'Animal Radar',
+    benefit: '200m Vahşi Hayvan Radarı',
     desc: 'Çevredeki ayı, kurt ve diğer hayvanları ekranda işaretler.',
     synergy: 'Karlık biyomda ayı avlarken hedef bulmayı kolaylaştırır.'
   },
@@ -388,7 +388,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+50% Planted Crop Yield',
+    benefit: '+%50 Ekstra Tarım Mahsulü Verimi',
     desc: 'Planter box içerisine ekilen tarım mahsullerinden (Kenevir, Berry, Patates) %50 daha fazla ürün verir.',
     synergy: 'God-Seed (GGGYYY) kenevir çiftliği ve Reaping Spade ile kumaş üretimini katlar.'
   },
@@ -400,7 +400,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '/setgenes Command (3h Cooldown)',
+    benefit: '/setgenes ile Kusursuz Gen Belirleme',
     desc: '3 saatte bir bitkilerin genetiğini doğrudan belirlemenizi sağlar (örn: GGGYYY God-Seed). Çaprazlama zahmetini bitirir.',
     synergy: 'Bountiful Harvest ile birlikte kumaş çiftliğini en yüksek verime ulaştırır.'
   },
@@ -413,8 +413,8 @@ export const SKILLS_DATA = [
     category: 'Tea & Cooking',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '30% Item Refund When Consumed',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Yemek ve Çay Tüketiminde %30 İade Şansı',
     desc: 'Yemek yediğinizde veya çay içtiğinizde %30 şansla eşyayı envanterinizden eksiltmez.',
     synergy: 'Pahalı Pure seviye çayların ve özel yemeklerin kullanım ömrünü uzatır.'
   },
@@ -425,8 +425,8 @@ export const SKILLS_DATA = [
     category: 'Tea & Cooking',
     tier: 'God-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+75% Tea Duration',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '+%75 Tüm Çayların Etki Süresinde Uzama',
     desc: 'İçilen çayların (Ore Tea, Scrap Tea, Max Health Tea) etki süresini %75 uzatır.',
     synergy: 'Pure seviye maden ve hurda çaylarının süresini neredeyse iki katına çıkarır.'
   },
@@ -438,7 +438,7 @@ export const SKILLS_DATA = [
     tier: 'B-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: 'Free Random 60m Tea Buff',
+    benefit: 'Saat Başı Ücretsiz 60dk Rastgele Çay Buffı',
     desc: 'Belirli aralıklarla oyuncuya 60 dakika süren rastgele güçlü bir çay buff\'ı tanımlar.',
     synergy: 'Sürekli aktif buff desteği sağlar.'
   },
@@ -450,7 +450,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '2x Cooking Speed & Buff Duration',
+    benefit: '2 Kat Pişirme Hızı ve 2 Kat Buff Süresi',
     desc: 'Yemek pişirme hızını 2 katına çıkarır ve pişirilen yemeklerin buff süresini uzatır.',
     synergy: 'Mantar çorbası ve et yemeklerinin süresini uzatır.'
   },
@@ -462,7 +462,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '+100 Mixing Table Speed',
+    benefit: '+%100 Karıştırma Masası (Mixing Table) Hızı',
     desc: 'Karıştırma masasının (Mixing Table) çalışma hızını ciddi oranda artırır.',
     synergy: 'Büyük ölçekli barut ve patlayıcı üretiminde bekleme süresini düşürür.'
   },
@@ -475,8 +475,8 @@ export const SKILLS_DATA = [
     category: 'Crafting',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-45% Armor Wear',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: '-%45 Zırh Darbe Aşınması',
     desc: 'Zırhların darbe aldıkça yıpranmasını %45 oranında azaltır.',
     synergy: 'HQM ve Leviathan zırh setlerinin dayanıklılık süresini uzatır.'
   },
@@ -488,7 +488,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '100% Instant Craft',
+    benefit: 'Anında Zanaat (Sıfır Bekleme)',
     desc: 'Kara listede olmayan eşyaları (Barut, Mermi, C4, Tıbbi İğne, Zırh) bekleme süresi olmadan anında üretir.',
     synergy: 'Büyük miktarda mühimmat veya patlayıcı üretirken zaman kaybını önler.'
   },
@@ -499,8 +499,8 @@ export const SKILLS_DATA = [
     category: 'Crafting',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '30% Crafting Component Refund',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Üretimde %30 Bileşen İadesi',
     desc: 'Zanaat yaparken harcanan bileşenlerin (Tech Trash, Boru vb.) %30\'unu geri iade eder.',
     synergy: 'C4 ve roket üretiminde bileşen tasarrufu sağlar.'
   },
@@ -512,7 +512,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '25% Craft Dupe',
+    benefit: 'Üretimde %25 Şansla Eşya Çoğaltma (Dupe)',
     desc: 'Zanaat yaparken %25 şansla üretilen eşyayı bedavadan bir adet daha kopyalar.',
     synergy: 'Roket ve C4 üretiminde hammadde maliyetini doğrudan düşürür.'
   },
@@ -523,8 +523,8 @@ export const SKILLS_DATA = [
     category: 'Crafting',
     tier: 'A-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '45% Max Insert Slot Chance',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Zırhlarda %45 Maksimum Eklenti Yuvası Şansı',
     desc: 'Üretilen veya bulunan zırhlarda maksimum zırh eklentisi (Armor Insert) yuvası çıkma şansını %45 artırır.',
     synergy: 'Zırhlara ekstra hasar direnci takmayı kolaylaştırır.'
   },
@@ -535,8 +535,8 @@ export const SKILLS_DATA = [
     category: 'Crafting',
     tier: 'B-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '30% Building Refund',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'İnşaatta Harcanan Malzemelerde %30 İade',
     desc: 'Yapı inşa ederken harcanan taş, metal veya HQM malzemesinin %30\'unu iade eder.',
     synergy: 'Büyük üs inşaatlarında hammadde tasarrufu sağlar.'
   },
@@ -548,7 +548,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '75% Scrap Research Refund',
+    benefit: 'Araştırma Masasında Harcanan Hurdanın %75 İadesi',
     desc: 'Araştırma masasında teknoloji ağacı açılırken harcanan hurdanın %75\'ini geri iade eder.',
     synergy: '1000 Scrap harcandığında 750 Scrap doğrudan iade edilir.'
   },
@@ -565,8 +565,8 @@ export const SKILLS_DATA = [
     category: 'Explosives',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+60% Explosive Radius',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Patlayıcılarda +%60 Sıçrama Hasarı (Splash) Alanı',
     desc: 'Patlayıcıların sıçrama hasarı (splash damage) alanını %60 genişletir.',
     synergy: 'Base raidlerinde duvar kesişimlerine sıkılan roketin çevre yapılara tam hasar vermesini sağlar.'
   },
@@ -577,8 +577,8 @@ export const SKILLS_DATA = [
     category: 'Explosives',
     tier: 'God-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '30% Second Explosion Chance',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Patlayıcılarda %30 Şansla İkinci Bedava Patlama',
     desc: 'Attığınız her patlayıcıda %30 şansla bedavadan ikinci bir patlama tetikler.',
     synergy: 'Raid World ve üs patlatmalarında sülfür ve patlayıcı harcamanızı %30 oranında azaltır.'
   },
@@ -590,7 +590,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '+500% Rocket Velocity',
+    benefit: 'Roketlerde 5 Kat Hız (+%500 Hız, Sıfır Düşüş)',
     desc: 'Roketlerin uçuş hızını 5 katına çıkarır. Roketler mermi gibi düz gider, düşüş açısı sıfırlanır.',
     synergy: 'Uzak mesafeden taret, Bradley veya helikopter vururken isabet oranını artırır.'
   },
@@ -602,7 +602,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '100% Dud Detonation',
+    benefit: 'Fitili Sönen Bombaların Kesin Olarak Patlaması',
     desc: 'Sönen / fitili boşa çıkan (dud) Kese Bombası (Satchel) ve Beancan patlayıcılar yine de kesin olarak patlar.',
     synergy: 'Erken oyun raidlerinde fitil sönmesi yüzünden bekleme ve ölme riskini bitirir.'
   },
@@ -614,8 +614,8 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '100% Self Explosive Resist',
-    desc: 'Kendi attığınız patlayıcılardan (C4, Roket, F1, Kese Bombası, MLRS) hasar almazsınız.',
+    benefit: 'Kendi Patlayıcılarınızdan %100 Hasar Bağışıklığı',
+    desc: 'Kendi attığınız patlayıcılardan (C4, Roket, F1, Kese Bombası, MLRS) sıfır hasar alırsınız.',
     synergy: 'Dar alanlarda veya kapı diplerinde güvenle roket atmanızı sağlar.'
   },
   {
@@ -626,7 +626,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: 'On-Demand AirStrike Flare',
+    benefit: 'İşaret Fişeği ile MLRS Hava Saldırısı',
     desc: 'İşaret fişeği fırlatarak gökyüzünden hedefe güdümlü füze yağmuru indirme yeteneğidir.',
     synergy: 'Taret tarlalarını ve kalabalık NPC kamplarını uzaktan temizlemek için kullanılır.'
   },
@@ -640,7 +640,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+50% Animal Damage',
+    benefit: 'Vahşi Hayvanlara Karşı +%50 Hasar',
     desc: 'Hayvanlara verdiğiniz hasarı %50 artırır.',
     synergy: 'Ayı ve kutup ayılarını çok daha az mermiyle hızlıca düşürmeyi sağlar.'
   },
@@ -652,7 +652,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '-50% Animal Damage Taken',
+    benefit: 'Hayvan Saldırılarından Alınan Hasarda -%50 Azalma',
     desc: 'Vahşi hayvanlardan alınan hasarı %50 oranında azaltır.',
     synergy: 'Karlık biyomda ayı saldırılarına karşı korur.'
   },
@@ -664,7 +664,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '1% Damage Healed (Vampirism)',
+    benefit: 'Verilen Hasarın %1\'i ile Can Doldurma (Vampirizm)',
     desc: 'Düşmanlara verdiğiniz hasarın %1\'i doğrudan can barınıza aktarılır.',
     synergy: 'Deep Sea ve Cobalt gemilerinde bilim insanı temizlerken canı dolu tutmayı sağlar.'
   },
@@ -676,7 +676,7 @@ export const SKILLS_DATA = [
     tier: 'C-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '5% Shared XP',
+    benefit: 'Takımdan %5 Ekstra Paylaşımlı Deneyim (XP)',
     desc: 'Takım arkadaşlarınızın kazandığı deneyim puanının %5\'ini sizinle paylaşır.',
     synergy: 'Grup halinde oynarken seviye atlamayı hızlandırır.'
   },
@@ -689,8 +689,8 @@ export const SKILLS_DATA = [
     category: 'Weapons',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+30% Magazine Capacity',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Tüm Silahlarda +%30 Ekstra Şarjör Kapasitesi',
     desc: 'Tüm silahların şarjör kapasitesini %30 artırır (AK-47: 39 mermi, M249: 130 mermi, LR-300: 39 mermi).',
     synergy: 'Şarjör değiştirme sıklığını azaltarak kesintisiz ateş gücü sağlar.'
   },
@@ -701,8 +701,8 @@ export const SKILLS_DATA = [
     category: 'Weapons',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-45% Weapon Wear',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Ateş Ederken Silahlarda -%45 Aşınma',
     desc: 'Ateş ettikçe silahların aşınmasını %45 oranında azaltır.',
     synergy: 'Efsanevi altın silahların dayanıklılığını korur, tamir aralığını uzatır.'
   },
@@ -714,7 +714,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '25% Free Ammo Chance',
+    benefit: 'Ateş Ederken %25 Şansla Bedava Mermi',
     desc: 'Ateş ettiğiniz her 4 mermiden biri envanterden eksilmez (%25 ücretsiz mermi).',
     synergy: 'M249 veya LR-300 ile uzun süreli taramalarda mühimmat tasarrufu sağlar.'
   },
@@ -726,7 +726,7 @@ export const SKILLS_DATA = [
     tier: 'C-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '25m Enemy Radar',
+    benefit: '25m Düşman NPC Radarı',
     desc: '25 metre yakınınızdaki düşman NPC\'leri haritada gösterir.',
     synergy: 'Karanlık tünellerde pusuya düşmeyi engeller.'
   },
@@ -737,8 +737,8 @@ export const SKILLS_DATA = [
     category: 'Weapons',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-30% Scientist Damage Taken',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Bilim İnsanlarından Alınan Hasarda -%30 Azalma',
     desc: 'Bilim insanlarından ve elit NPC\'lerden alınan hasarı %30 oranında azaltır.',
     synergy: 'Deep Sea Cobalt kargo baskınlarında taret ve tüfek hasarına karşı korur.'
   },
@@ -749,8 +749,8 @@ export const SKILLS_DATA = [
     category: 'Weapons',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '+30% Damage to Scientists',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Bilim İnsanlarına ve NPC\'lere Karşı +%30 Hasar',
     desc: 'Bilim insanlarına ve insan NPC\'lere verilen hasarı %30 artırır.',
     synergy: 'Armored ve Life Leech ile birlikte PvE çatışmalarını hızlandırır.'
   },
@@ -764,7 +764,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '-25% Heat & Fire Damage',
+    benefit: 'Ateş ve Isı Hasarına Karşı -%25 Direnç',
     desc: 'Ateş, alev ve ısı hasarını %25 oranında azaltır.',
     synergy: 'Harbinger Boss Drone alev ışınlarına karşı hayatta kalmak için zorunludur.'
   },
@@ -776,7 +776,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '-25% Radiation Damage',
+    benefit: 'Radyasyon Hasarına Karşı -%25 Koruma',
     desc: 'Radyasyon hasarını %25 oranında azaltır.',
     synergy: 'Launch Site ve Military Tunnels gibi yüksek radyasyonlu anıtlarda koruma sağlar.'
   },
@@ -788,7 +788,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: 'Environmental Cold Immunity',
+    benefit: 'Çevresel Soğuğa Karşı Tam Bağışıklık ve %25 Donma Direnci',
     desc: 'Çevresel dondurucu soğuklara karşı tam bağışıklık ve %25 soğuk direnci sağlar.',
     synergy: 'Kar biyomunda ve gece saatlerinde soğuktan can kaybetmeyi engeller.'
   },
@@ -800,7 +800,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '-50% Trap Damage Taken',
+    benefit: 'Düşman Tuzaklarından Alınan Hasarda -%50 Azalma',
     desc: 'Tuzaklardan (Ayı kapanı, kara mayını, shotgun trap vb.) alınan hasarı %50 azaltır.',
     synergy: 'Raid World üslerine girerken beklenmedik tuzak hasarını azaltır.'
   },
@@ -812,7 +812,7 @@ export const SKILLS_DATA = [
     tier: 'B-Tier',
     type: 'Ability',
     cost: '5 SP',
-    benefit: '+50% Trap Damage to NPCs',
+    benefit: 'Kurulan Tuzakların NPC Düşmanlara +%50 Ekstra Hasarı',
     desc: 'Yerleştirdiğiniz tuzakların NPC düşmanlara verdiği hasarı %50 artırır.',
     synergy: 'Üs savunmasında tuzakların etkinliğini artırır.'
   },
@@ -827,8 +827,8 @@ export const SKILLS_DATA = [
     category: 'Fuel',
     tier: 'S-Tier',
     type: 'Multi-Tier',
-    cost: '1 SP / rank (Maks 3/3)',
-    benefit: '-75% Fuel Consumption',
+    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    benefit: 'Tüm Araçlarda -%75 Yakıt Tüketimi',
     desc: 'Bindiğiniz tüm araçların (Heli, Tekne, Araba, Tugboat, Denizaltı) yakıt tüketimini %75 oranında azaltır.',
     synergy: 'Uzun menzilli seyahatlerde Low Grade Fuel tasarrufu sağlar.'
   },
@@ -840,7 +840,7 @@ export const SKILLS_DATA = [
     tier: 'S-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+200% Mounted Horse Speed',
+    benefit: 'Ata Bindiğinizde +%200 (3 Kat) Koşu Hızı',
     desc: 'Ata bindiğinizde atın koşu hızını %200 (3 katına) çıkarır.',
     synergy: 'Sıfır yakıt maliyetiyle haritada hızlı seyahat etmeyi sağlar.'
   },
@@ -852,8 +852,8 @@ export const SKILLS_DATA = [
     tier: 'B-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+100% Bike Acceleration',
-    desc: 'Bisiklet sürerken hızlanmayı %100 artırır.',
+    benefit: 'Bisiklet ve Motorda +%100 Hızlanma ve İvme',
+    desc: 'Bisiklet ve motosiklet sürerken hızlanmayı %100 artırır.',
     synergy: 'Wipe başı yolculuklarında pratik hızlanma sağlar.'
   },
   {
@@ -864,7 +864,7 @@ export const SKILLS_DATA = [
     tier: 'A-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+100% Boat Acceleration',
+    benefit: 'Tekne ve Tugboat Kullanımında +%100 İvmelenme',
     desc: 'Tekne ve Tugboat sürerken kalkış ve ivmelenmeyi 2 katına çıkarır.',
     synergy: 'Deep Sea Cobalt kargo gemilerini kovalarken su üstü manevrasını güçlendirir.'
   },
@@ -876,7 +876,7 @@ export const SKILLS_DATA = [
     tier: 'God-Tier',
     type: 'Ability',
     cost: '1 SP',
-    benefit: '+150% Heli Acceleration',
+    benefit: 'Mini ve Hurda Helikopterde +%150 Hızlı Kalkış ve İvme',
     desc: 'Minicopter ve Scrap Helikopter sürerken ivmelenmeyi %150 artırır. Helikopter kalkışı ve hızlanması hızlanır.',
     synergy: 'Monumentler ve petrol platformları arasındaki uçuş süresini yarıya indirir.'
   }

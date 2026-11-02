@@ -140,7 +140,7 @@ export default function SkillSection({ searchQuery, selectedTree, setSelectedTre
                     {/* Top: Badges */}
                     <div className="flex items-start justify-between gap-2 mb-3">
                       <div>
-                        <span className="text-[11px] font-semibold text-mist uppercase tracking-wider block mb-1">
+                        <span className="text-[11px] font-semibold text-mist tracking-wider block mb-1">
                           {skill.tree} • {skill.category}
                         </span>
                         <h3 className="font-serif text-xl font-bold text-seedling group-hover:text-terracotta-light transition-colors">
@@ -150,7 +150,7 @@ export default function SkillSection({ searchQuery, selectedTree, setSelectedTre
 
                       <div className="flex flex-col items-end gap-1">
                         <span
-                          className={`text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider ${
+                          className={`text-xs px-2.5 py-0.5 rounded-full font-bold tracking-wider ${
                             isGod
                               ? 'bg-terracotta text-seedling shadow-sm'
                               : isS
@@ -168,8 +168,8 @@ export default function SkillSection({ searchQuery, selectedTree, setSelectedTre
 
                     {/* Benefit Box */}
                     <div className="bg-sow-dark/70 rounded-xl px-3.5 py-2 border border-sow-border mb-3.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-mist block">
-                        Temel Etki / Kazanç
+                      <span className="text-[10px] font-mono font-bold tracking-wider text-mist block">
+                        YETENEK ETKİSİ
                       </span>
                       <span className="font-mono text-sm font-semibold text-sprout">
                         {skill.benefit}
@@ -188,7 +188,7 @@ export default function SkillSection({ searchQuery, selectedTree, setSelectedTre
                       <div className="flex items-start gap-1.5 text-xs text-mist">
                         <CheckCircle2 className="w-3.5 h-3.5 text-terracotta-light shrink-0 mt-0.5" />
                         <span>
-                          <strong className="text-seedling font-medium">Sinerji:</strong>{' '}
+                          <strong className="text-seedling font-medium">TAKTİK &amp; SİNERJİ:</strong>{' '}
                           {skill.synergy}
                         </span>
                       </div>
