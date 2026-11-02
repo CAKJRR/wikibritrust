@@ -67,8 +67,8 @@ export const PROGRESSION_GUIDES = {
         title: 'Bradley APC Avı',
         badge: 'Askeri Ganimet',
         content: [
-          'Launch Site\'taki Bradley tankı, devriye helikopterlerine kıyasla çok daha kolay bir hedeftir.',
-          'Kulelerin ve binaların arkasından siper alarak HV Roket veya F1 el bombaları ile imha edilebilir.',
+          'Bradley APC, Patrol Helikopteri gibi çalışır: Launch Site\'ta değil, Raid Dünyası\'ndaki Bradley portallarına gidilerek kesilir.',
+          'Portal alanında siper alarak HV Roket veya F1 el bombaları ile imha edilebilir.',
           'Eğer Huff-N-Puff efsanevi silahınız varsa, fırlattığı özel dartlar tankın zırhını saniyeler içinde deler.',
           'Enkazından CCTV kamera, hedefleme bilgisayarı, yüksek kalite metal ve askeri kasalar çıkar.'
         ]
