@@ -184,12 +184,12 @@ export default function VisualTree({ activeTree, setActiveTree }) {
                   onClick={() => {
                     if (!hasDraggedRef.current) setSelectedNodeId(node.id);
                   }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center group ${
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center group ${
                     isDragging ? 'cursor-grabbing' : 'cursor-pointer'
                   }`}
                   style={{ left: `${node.x}%`, top: `${node.y}%` }}
                 >
-                  {/* Elmas Kutu */}
+                  {/* Elmas Kutu - Tam Merkez Noktası (node.x, node.y) */}
                   <div
                     className={`w-11 h-11 sm:w-12 sm:h-12 rotate-45 rounded-xl flex items-center justify-center transition-all duration-200 ${
                       isSelected
@@ -202,8 +202,8 @@ export default function VisualTree({ activeTree, setActiveTree }) {
                     </span>
                   </div>
 
-                  {/* Altındaki Seviye Rozeti ve İsim (Ferah & Kırpılmasız) */}
-                  <div className="mt-2 text-center pointer-events-none flex flex-col items-center">
+                  {/* Altındaki Seviye Rozeti ve İsim (Elmasın Merkezini Bozmayacak Şekilde Altına Konumlu) */}
+                  <div className="absolute top-full mt-2.5 text-center pointer-events-none flex flex-col items-center w-32 left-1/2 -translate-x-1/2">
                     <span 
                       className={`inline-block text-[10px] font-mono font-bold px-1.5 py-0.5 rounded leading-none ${
                         isSelected
@@ -213,7 +213,7 @@ export default function VisualTree({ activeTree, setActiveTree }) {
                     >
                       {node.rank}
                     </span>
-                    <span className="block text-[11px] font-medium text-seedling group-hover:text-terracotta-light transition-colors text-center leading-tight max-w-[115px] mt-1 break-words px-0.5">
+                    <span className="block text-[11px] font-medium text-seedling group-hover:text-terracotta-light transition-colors text-center leading-tight mt-1 break-words px-0.5">
                       {node.name}
                     </span>
                   </div>
