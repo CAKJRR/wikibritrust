@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Swords, Sunrise, Scale, Skull, Sparkles, Terminal, Pickaxe, Shield, Truck, Search, X } from 'lucide-react';
+import { Home, Swords, Sunrise, Scale, Skull, Sparkles, Terminal, Gamepad2, Pickaxe, Shield, Truck, Search, X } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
 
 export default function Sidebar({
@@ -14,10 +14,11 @@ export default function Sidebar({
 }) {
   const navItems = [
     { id: 'home', label: 'Genel Bakış', icon: Home },
+    { id: 'play', label: 'Nasıl Oynanır', icon: Gamepad2 },
     { id: 'skills', label: 'Yetenek Ağacı', icon: Swords },
-    { id: 'early', label: 'Erken Oyun (Early)', icon: Sunrise },
-    { id: 'mid', label: 'Orta Oyun (Mid)', icon: Scale },
-    { id: 'endgame', label: 'Oyun Sonu (Endgame)', icon: Skull },
+    { id: 'early', label: 'Başlangıç Rehberleri', icon: Sunrise },
+    { id: 'mid', label: 'Orta Seviye Rehberler', icon: Scale },
+    { id: 'endgame', label: 'İleri Seviye Rehberler', icon: Skull },
     { id: 'legendary', label: 'Efsanevi Eşyalar', icon: Sparkles },
     { id: 'commands', label: 'Sunucu Komutları', icon: Terminal },
   ];

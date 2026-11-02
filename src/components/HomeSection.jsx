@@ -1,5 +1,5 @@
 import React from 'react';
-import { Swords, ShieldAlert, Coins, Sparkles, Terminal, ArrowRight, BookOpen, Layers } from 'lucide-react';
+import { Swords, ShieldAlert, Coins, Sparkles, Terminal, ArrowRight, BookOpen, Layers, Gamepad2 } from 'lucide-react';
 
 export default function HomeSection({ setActiveTab, setSelectedTree }) {
   const sections = [
@@ -18,31 +18,31 @@ export default function HomeSection({ setActiveTab, setSelectedTree }) {
     },
     {
       id: 'early',
-      title: 'Erken Oyun (Early Game)',
-      subtitle: 'Wipe Başlangıcı • Hızlı Teknoloji',
-      desc: 'Wipe\'ın ilk saatlerinde hurda (Scrap) optimizasyonu, Taktik Eldiven geri dönüşümü ve temel yetenek rotası.',
+      title: 'Başlangıç Rehberleri',
+      subtitle: 'Giriş • İlk Gece • RP Yöntemleri',
+      desc: 'Sunucuya yeni gelenler için giriş, ilk gece, hızlı RP kazanma yolları ve erken yetenek rotası.',
       icon: Layers,
-      btnText: 'Başlangıç Rehberi',
+      btnText: 'Rehberlere Göz At',
       badge: 'Başlangıç',
       action: () => setActiveTab('early')
     },
     {
       id: 'mid',
-      title: 'Orta Oyun (Mid Game)',
-      subtitle: 'Tarım • Sanal Ocaklar • Bradley',
-      desc: 'Kenevir ve kumaş otomasyonu, /setgenes genetik sistemi, Sanal Ocak dizel döngüsü ve Bradley APC taktikleri.',
+      title: 'Orta Seviye Rehberler',
+      subtitle: 'Yemek • Görevler • Sanal Ocaklar',
+      desc: '/setgenes, yemek sistemi, seviye ve Prestige, görev sistemi, sanal taş ocakları ve dünya etkinlikleri.',
       icon: Coins,
-      btnText: 'Gelişim Rehberi',
+      btnText: 'Rehberlere Göz At',
       badge: 'Orta Aşama',
       action: () => setActiveTab('mid')
     },
     {
       id: 'endgame',
-      title: 'Oyun Sonu (Endgame & Raids)',
-      subtitle: 'Harbinger • Deep Sea • Nightmare',
-      desc: 'Harbinger Boss Drone mekanikleri, Deep Sea Cobalt kargo operasyonları ve Nightmare seviye üs raidleri.',
+      title: 'İleri Seviye Rehberler',
+      subtitle: 'Bradley • Heli • Baskın • Deep Sea',
+      desc: 'Zırh eklentileri, Deep Sea, efsanevi setler, Bradley ve heli avı, Raid Dünyaları ve Harbinger boss drone.',
       icon: ShieldAlert,
-      btnText: 'İleri Seviye Rehber',
+      btnText: 'Rehberlere Göz At',
       badge: 'Endgame',
       action: () => setActiveTab('endgame')
     },
@@ -95,6 +95,14 @@ export default function HomeSection({ setActiveTab, setSelectedTree }) {
             Brits PvE Worlds V2 sunucusundaki birleşik yetenek ağacı mimarisi, dünya bossları, 
             otomasyon sistemleri ve efsanevi ganimet havuzlarına dair kapsamlı dokümantasyon platformu.
           </p>
+
+          <button
+            onClick={() => setActiveTab('play')}
+            className="inline-flex items-center gap-2 mb-8 px-4 py-2.5 rounded-xl bg-terracotta hover:bg-terracotta-light text-seedling text-xs font-bold transition-all shadow-terracotta"
+          >
+            <Gamepad2 className="w-4 h-4" />
+            <span>Sunucuya Nasıl Bağlanırım?</span>
+          </button>
 
           {/* Core System Indicators */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-1">

@@ -6,6 +6,7 @@ import SkillSection from './components/SkillSection';
 import ProgressionSection from './components/ProgressionSection';
 import LegendarySection from './components/LegendarySection';
 import CommandsSection from './components/CommandsSection';
+import PlaySection from './components/PlaySection';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -16,10 +17,11 @@ export default function App() {
 
   const tabTitles = {
     home: 'Genel Bakış & Başlangıç',
+    play: 'Nasıl Oynanır',
     skills: 'Yetenek Ağacı (Worlds V2)',
-    early: 'Erken Oyun (Early Game)',
-    mid: 'Orta Oyun (Mid Game)',
-    endgame: 'Oyun Sonu (Endgame)',
+    early: 'Başlangıç Rehberleri',
+    mid: 'Orta Seviye Rehberler',
+    endgame: 'İleri Seviye Rehberler',
     legendary: 'Efsanevi Eşyalar & Tamir',
     commands: 'Sunucu Komutları',
   };
@@ -61,6 +63,11 @@ export default function App() {
             />
           )}
 
+          {/* Nasıl Oynanır (Sunucuya Bağlanma) */}
+          {activeTab === 'play' && (
+            <PlaySection setActiveTab={setActiveTab} />
+          )}
+
           {/* Yetenek Ağacı (Oyun İçi Düğüm Haritası + Kartlar) */}
           {activeTab === 'skills' && (
             <SkillSection
@@ -72,17 +79,17 @@ export default function App() {
 
           {/* Erken Oyun (Early Game) */}
           {activeTab === 'early' && (
-            <ProgressionSection stage="early" />
+            <ProgressionSection stage="early" searchQuery={searchQuery} setActiveTab={setActiveTab} setSelectedTree={setSelectedTree} />
           )}
 
           {/* Orta Oyun (Mid Game) */}
           {activeTab === 'mid' && (
-            <ProgressionSection stage="mid" />
+            <ProgressionSection stage="mid" searchQuery={searchQuery} setActiveTab={setActiveTab} setSelectedTree={setSelectedTree} />
           )}
 
           {/* Oyun Sonu (Endgame) */}
           {activeTab === 'endgame' && (
-            <ProgressionSection stage="endgame" />
+            <ProgressionSection stage="endgame" searchQuery={searchQuery} setActiveTab={setActiveTab} setSelectedTree={setSelectedTree} />
           )}
 
           {/* Efsanevi Eşyalar & Tamir */}
