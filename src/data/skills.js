@@ -31,8 +31,8 @@ export const SKILLS_DATA = [
     name: 'Second Strike',
     tree: 'Gathercraft',
     category: 'Mining',
-    type: 'Multi-Tier',
-    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    type: 'Ability',
+    cost: '1 SP',
     benefit: '%35 Anında Maden Yenilenmesi',
     desc: 'Kırılan maden nodunun %35 şansla aynı noktada anında yeniden doğmasını sağlar.',
     synergy: 'Aynı noktada art arda nod kırarak yer değiştirmeden hızlıca çanta doldurabilirsiniz.'
@@ -145,8 +145,8 @@ export const SKILLS_DATA = [
     name: 'Regrowth',
     tree: 'Gathercraft',
     category: 'Woodcutting',
-    type: 'Multi-Tier',
-    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    type: 'Ability',
+    cost: '1 SP',
     benefit: '%5 Şansla 3-5 Yeni Ağaç Çıkması',
     desc: 'Bir ağaç kesildiğinde %5 şansla etrafında anında 3 ila 5 yeni ağaç bitmesini sağlar.',
     synergy: 'Üs etrafında odun kaynağının tükenmesini engeller.'
@@ -180,10 +180,10 @@ export const SKILLS_DATA = [
     name: 'Rapid Recycle',
     tree: 'Gathercraft',
     category: 'Scavenging',
-    type: 'Multi-Tier',
-    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    type: 'Ability',
+    cost: '1 SP',
     benefit: '2 Kat Hızlı Geri Dönüşüm (-2.5s Süre)',
-    desc: 'Geri dönüştürücünün çalışma hızını artırır; bileşenleri çok daha kısa sürede eritir.',
+    desc: 'Geri dönüştürücünün çalışma hızını artırır (-2.5 saniye tick süresi); bileşenleri çok daha kısa sürede eritir.',
     synergy: 'Outpost veya Güvenli Bölgede hurda eritirken bekleme süresini azaltır.'
   },
   {
@@ -213,22 +213,33 @@ export const SKILLS_DATA = [
     name: "Fisherman's Fortune",
     tree: 'Gathercraft',
     category: 'Fishing',
-    type: 'Multi-Tier',
-    cost: 'Kademe Başına 1 SP (Maks. 3)',
-    benefit: 'Nadir Balık Tutma Şansında Büyük Artış',
-    desc: 'Balık tutarken daha nadir ve yüksek seviye balık yakalama şansını artırır.',
-    synergy: 'Balıkçılık görevlerinde ve hurda takasında kullanılır.'
+    type: 'Ability',
+    cost: '1 SP',
+    benefit: '+%50 Ekstra Balık Tutma Şansı',
+    desc: 'Başarılı her balık avında %50 şansla fazladan bir balık daha kazandırır.',
+    synergy: 'Balıkçılık görevlerinde ve hurda takasında balık gelirini doğrudan artırır.'
   },
   {
     id: 'braided-line',
     name: 'Braided Line',
     tree: 'Gathercraft',
     category: 'Fishing',
+    type: 'Ability',
+    cost: '1 SP',
+    benefit: '-%35 Misina Gerilimi ve Kopma Riski',
+    desc: 'Olta misinasındaki gerilimi ve kopma baskısını %35 oranında azaltır.',
+    synergy: 'Büyük ve nadir balıkları kaçırmadan kolayca çekmeyi sağlar.'
+  },
+  {
+    id: 'feeding-frenzy',
+    name: 'Feeding Frenzy',
+    tree: 'Gathercraft',
+    category: 'Fishing',
     type: 'Multi-Tier',
     cost: 'Kademe Başına 1 SP (Maks. 3)',
-    benefit: 'Olta Misinası Kopma Riskinde Azalma',
-    desc: 'Olta misinasının kopma ihtimalini büyük oranda azaltır.',
-    synergy: 'Büyük köpekbalığı ve nadir balıkları kaçırmadan çekmeyi sağlar.'
+    benefit: '-%30 Balık Isırma Süresi (Kademe Başına)',
+    desc: 'Oltaya balık gelme ve ısırma bekleme süresini kademe başına %30 azaltır (-%30 / -%60 / -%90). (Geliştirici notu: Henüz geliştirme aşamasındadır / Yakında).',
+    synergy: 'Braided Line ve Fisherman’s Fortune ile balık tutma hızını en üst seviyeye taşır.'
   },
   {
     id: 'tea-party',
@@ -252,8 +263,8 @@ export const SKILLS_DATA = [
     name: 'Inspired Decor',
     tree: 'Survivalcraft',
     category: 'Health',
-    type: 'Multi-Tier',
-    cost: 'Kademe Başına 1 SP (Maks. 3)',
+    type: 'Ability',
+    cost: '1 SP',
     benefit: 'TC (Yetki) Alanında Sürekli %100 Konfor',
     desc: 'Yetki sahibi olduğunuz Tool Cupboard (TC) menzilinde daima %100 konfor (Comfort) sağlar.',
     synergy: 'Üssün içinde ateş yakmadan maksimum can yenilenmesini aktif tutar.'
