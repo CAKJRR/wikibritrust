@@ -17,6 +17,116 @@ export const DURABILITY_GUIDE = {
   ]
 };
 
+// TÜM EFSANEVİ ALETLER (LEGENDARY TOOLS)
+export const LEGENDARY_TOOLS = [
+  {
+    id: 'mads-extra-magical',
+    name: 'Mad’s Extra Magical Tools',
+    category: 'Tamir / Sonsuz Dayanıklılık',
+    dropSource: 'Nightmare Raids, Legendary Helis, Deep Sea Kasaları',
+    effect: 'Tamir masasında tamir edildiğinde kalıcı kırmızı bar cezasını siler ve eşyanın orijinal %100 maksimum dayanıklılığını geri yükler.',
+    highlight: 'Sonsuza kadar kırılmadan %100 canla kullanılabilen tek alettir.'
+  },
+  {
+    id: 'mads-magical',
+    name: 'Mad’s Magical Tools',
+    category: 'Standart Efsanevi Alet',
+    dropSource: 'Yüksek seviye boss kasaları & etkinlik ödülleri',
+    effect: 'Standart efsanevi toplama aletidir; tamir masasında normal tamir edilir ve normal oranda max can kaybeder.',
+    highlight: 'Yüksek verim ve toplama hızı sağlar.'
+  },
+  {
+    id: 'reaping-spade',
+    name: 'Reaping Spade',
+    category: 'Tarım & Hasat',
+    dropSource: 'Yerden taş ve odun kütüğü toplarken nadiren düşer',
+    effect: '6 metre yarıçaptaki tüm bitkileri (tam 3x3 planter kutusunu) tek tıkla anında hasat eder.',
+    highlight: 'Bountiful Harvest ve God-Seed (GGGYYY) ile kumaş zengini olmanın anahtarıdır.'
+  },
+  {
+    id: 'fertile-bone',
+    name: 'Fertile Bone',
+    category: 'Tarım & Büyütme',
+    dropSource: 'Doğadaki yabani kenevir/meyve toplayıcılarından düşer',
+    effect: '50 kemik tozu (Bone Fragment) karşılığında mahsulü anında bir sonraki büyüme evresine geçirir.',
+    highlight: 'Ekilmiş bitkileri saniyeler içinde olgunlaştırıp hasada hazır hale getirir.'
+  },
+  {
+    id: 'baloos-marrowpaw',
+    name: 'Bal0o’s Marrowpaw',
+    category: 'Avcılık & Kemik',
+    dropSource: 'Ayı (Bear) avlayıp derisini yüzerken düşer',
+    effect: 'Avlanan her hayvandan tam 4 KAT (4x) daha fazla kemik parçası (Bone Fragment) verir.',
+    highlight: 'Fertile Bone aletinin kemik ihtiyacını sonsuz kılmak için kullanılır.'
+  },
+  {
+    id: 'brits-broken-pickaxe',
+    name: 'Brits Broken Pickaxe',
+    category: 'Madencilik',
+    dropSource: 'Efsanevi ganimet sandıkları & maden ödülleri',
+    effect: 'Maden nodlarından tam +%60 ekstra cevher verimi sağlar.',
+    highlight: 'Prospector (+%75) ile birleştiğinde devasa HQM ve kükürt akışı sağlar.'
+  },
+  {
+    id: 'brits-broken-axe',
+    name: 'Brits Broken Axe',
+    category: 'Odunculuk / Çiftçilik',
+    dropSource: 'Efsanevi ganimet sandıkları',
+    effect: 'Ağaç keserken oyuncunun etrafında anında 4 ADET MADEN NODU doğurma şansı vardır.',
+    highlight: 'Odun keserken aynı anda sülfür ve metal nodu çıkartarak maden arama derdini bitirir.'
+  }
+];
+
+// TÜM EFSANEVİ ZIRH SETLERİ (LEGENDARY SETS)
+export const LEGENDARY_SETS = [
+  {
+    id: 'dragon-thorn',
+    name: 'Dragon Thorn Armor Set',
+    category: 'Vampirik Zırh (Ölümsüz Tank)',
+    dropSource: 'Endgame Zindanlar & Boss Sandıkları',
+    parts: 'Maske (%1), Hoodie (%2), Pelerin (%7), Eldiven (%1), Çizme (%1), Pantolon (%0.5)',
+    setBonus: 'Tam Set Bonusu: %12.5 Vampiric Healing (Hasar vurdukça can yenileme)!',
+    desc: 'Düşmana hasar verdiğinizde canınızı doldurur. Combat ağacındaki Life Leech (%1) ile birleştiğinde toplam %13.5 can çalma yaparak sizi PvE çatışmalarında adeta ölümsüz kılar.'
+  },
+  {
+    id: 'leviathan-armor',
+    name: 'Leviathan Armor Set',
+    category: 'Deep Sea Prototipi (Ağır Zırh)',
+    dropSource: 'Deep Sea Cobalt Cargo gemisi ambarındaki kilitli sandıklar',
+    parts: 'Ağır göğüslük, kask ve koruyucu bacak zırhı',
+    setBonus: 'Yüksek darbe emilimi ve Deep Sea sualtı operasyon koruması.',
+    desc: 'Cobalt gemilerindeki ölümcül taret ve elit bilim insanı saldırılarını emmek için özel olarak tasarlanmış en yeni prototip settir.'
+  },
+  {
+    id: 'impact-armor',
+    name: 'Impact Armor Set',
+    category: 'Hasar Azaltma (Damage Mitigation)',
+    dropSource: 'Nightmare Raid kasaları ve Helikopter enkazları',
+    parts: 'Tam zırhlı kompozit plakalar',
+    setBonus: 'Yüksek patlayıcı ve mermi direnci.',
+    desc: 'Legendary patrol helikopterlerine ve roket tuzaklarına karşı hayatta kalmak için kullanılan ağır defans zırhı.'
+  },
+  {
+    id: 'helping-hands',
+    name: 'Helping Hands',
+    category: 'Özel Efsanevi Aksesuar',
+    dropSource: 'Nadir dünya bossu ödülleri',
+    parts: 'Özel el/bilek donanımı',
+    setBonus: 'Yere düştüğünde (downed) ANINDA %100 Canla Ayağa Kaldırır + 5 Saniye Tam Ölümsüzlük!',
+    desc: 'PvE\'de solo oynarken veya zorlu bosslarda hata yaptığınızda hayatınızı kurtaran sunucunun en güçlü güvenlik mekanizmasıdır.'
+  },
+  {
+    id: 'specialist-sets',
+    name: 'Uzman Meslek Zırhları (Gathering Sets)',
+    category: 'Özel Meslek Giysileri',
+    dropSource: 'Pazar, görevler ve dünya sandıkları',
+    parts: 'Lumberjack, Mining, Hunter, Farmer, Scavenger, Angler Setleri',
+    setBonus: 'Her set kendi alanında (Odun, Maden, Deri/Kemik, Ekin, Hurda, Balık) ekstra verim ve hız bonusu sağlar.',
+    desc: 'İlgili efsanevi aletle giyildiğinde (örn: Lumberjack Set + Brits Broken Axe) maksimum sinerji oluşturur.'
+  }
+];
+
+// TÜM EFSANEVİ SİLAHLAR (LEGENDARY WEAPONS - TAM 13 SİLAH)
 export const LEGENDARY_WEAPONS = [
   {
     name: 'Brits Golden M249',
@@ -61,15 +171,39 @@ export const LEGENDARY_WEAPONS = [
     role: 'Hafif Heli Avcısı'
   },
   {
-    name: 'Hydra’s Stolen Wand',
-    effect: 'Doğrudan MLRS füzeleri fırlatır (Shoots MLRS)',
-    ammo: 'MLRS',
-    role: 'Yıkım Asası'
-  },
-  {
     name: 'Brits Broken Eoka',
     effect: 'Helikopterlere tam +%500 Hasar! (+500% DMG to helis)',
     ammo: 'Av Tüfeği Saçması (Shotgun shells)',
     role: 'Tek Vuruşta Heli Patlatma'
+  },
+  {
+    name: 'DoubleBoom',
+    effect: 'Roket fırlatan çifte pompalı tüfek (Double barrel shotgun that shoots rockets)',
+    ammo: 'Shotgun shells & Roket',
+    role: 'Yakın Mesafe Yıkım'
+  },
+  {
+    name: 'Cluster Clutch',
+    effect: 'F1 el bombaları fırlatan su borusu pompalı tüfek (Shoots F1 grenades)',
+    ammo: 'Shotgun shells & F1 Bombası',
+    role: 'Alan Temizliği'
+  },
+  {
+    name: 'Hydra’s Stolen Wand',
+    effect: 'Doğrudan MLRS füzeleri fırlatan mistik asa (Shoots MLRS)',
+    ammo: 'MLRS',
+    role: 'Kuşatma Asası'
+  },
+  {
+    name: 'Huff-N-Puff',
+    effect: 'Bradley tanklarını saniyeler içinde eriten özel dartlar fırlatır',
+    ammo: 'HV Roket & Özel Dart',
+    role: 'Bradley Katili'
+  },
+  {
+    name: 'Eooooka',
+    effect: 'Satchel patlayıcısı fırlatan eoka tabancası (Satchel-charged eoka)',
+    ammo: 'Shotgun shells & Satchel Charge',
+    role: 'Erken Oyun Kapı Kırıcı'
   }
 ];
