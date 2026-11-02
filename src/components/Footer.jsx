@@ -36,15 +36,29 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Credits & Disclaimer */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-mist/70">
+        {/* Official Bilingual Disclaimer Box */}
+        <div className="rounded-2xl bg-sow-card/80 border border-sow-border/80 p-4 text-xs text-mist leading-relaxed space-y-2">
+          <div className="flex items-center gap-2 text-seedling font-semibold">
+            <span className="text-terracotta-light">✦</span>
+            <span>Topluluk &amp; Sorumluluk Reddi Beyanı (Community Disclaimer)</span>
+          </div>
+          <p className="text-[11px] text-mist/90">
+            <strong className="text-seedling font-mono font-semibold">TR:</strong> Bu web sitesi, <em>Brits PvE Worlds V2</em> oyuncuları için bağımsız olarak hazırlanmış, kâr amacı gütmeyen gayriresmî bir Türkçe topluluk rehberidir. <em>Brits PvE Worlds</em> yönetimi veya <em>Facepunch Studios</em> ile doğrudan resmi bir kurumsal ortaklığı ya da sponsorluğu bulunmamaktadır. Tüm oyun içi ticari markalar, isimler ve varlıklar ilgili hak sahiplerine aittir.
+          </p>
+          <p className="text-[11px] text-mist/75 italic">
+            <strong className="text-seedling font-mono font-semibold not-italic">EN:</strong> This is an independent, non-profit, fan-made community documentation created for players of <em>Brits PvE Worlds V2</em>. We are not officially affiliated with, endorsed by, or sponsored by Brits PvE Worlds administration or Facepunch Studios. All in-game trademarks, assets, and names belong to their respective owners.
+          </p>
+        </div>
+
+        {/* Bottom Credits */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 text-[11px] text-mist/70">
           <p className="text-center sm:text-left">
-            Rust, <strong>Facepunch Studios</strong>'un tescilli ticari markasıdır. Bu site <strong>Brits PvE Worlds</strong> topluluğu için bağımsız olarak hazırlanmış, kâr amacı gütmeyen gayriresmî bir oyuncu kılavuzudur.
+            Rust © <strong>Facepunch Studios</strong>. Brits PvE Worlds V2 Türkçe Topluluk Kılavuzu.
           </p>
           <div className="flex items-center gap-2 shrink-0 text-mist">
             <span className="text-terracotta-light">Brits PvE Worlds V2</span>
             <span>•</span>
-            <span className="text-sprout">Facepunch Studios</span>
+            <span className="text-sprout">Community Fan Project</span>
           </div>
         </div>
 
