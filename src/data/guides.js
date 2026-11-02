@@ -252,7 +252,7 @@ export const PROGRESSION_GUIDES = {
           {
             heading: 'Seviye ve Yetenek Puanı',
             items: [
-              'Her seviye atladığında 2 Yetenek Puanı (SP) kazanırsın.',
+              'Seviye atladıkça yetenek ağacında harcamak üzere Yetenek Puanı (SP) kazanırsın.',
               'Yetenek ağacını /st komutuyla veya envanter açıkken XP barına tıklayarak açabilirsin.',
               'Prestige öncesi maksimum seviye 100\'dür.'
             ]

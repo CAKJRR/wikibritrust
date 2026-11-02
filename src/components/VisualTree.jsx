@@ -7,10 +7,17 @@ export default function VisualTree({ activeTree, setActiveTree }) {
   const currentLayout = TREE_LAYOUTS[activeTree] || TREE_LAYOUTS.Gathercraft;
   const [selectedNodeId, setSelectedNodeId] = useState(currentLayout.nodes[0]?.id || 'shatterpoint');
 
-  // When activeTree changes, select the first node of that tree
+  // When activeTree changes, select the first node of that tree and center viewport on HUB
   useEffect(() => {
     if (currentLayout.nodes[0]) {
       setSelectedNodeId(currentLayout.nodes[0].id);
+    }
+    const el = viewportRef.current;
+    if (el) {
+      setTimeout(() => {
+        el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+        el.scrollTop = (el.scrollHeight - el.clientHeight) / 2;
+      }, 50);
     }
   }, [activeTree]);
 

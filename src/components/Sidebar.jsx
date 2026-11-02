@@ -1,5 +1,21 @@
-import React from 'react';
-import { Home, Swords, Sunrise, Scale, Skull, Sparkles, Terminal, Gamepad2, Pickaxe, Shield, Truck, Search, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { 
+  Home, 
+  Swords, 
+  BookOpen, 
+  Sunrise, 
+  Scale, 
+  Skull, 
+  Sparkles, 
+  Terminal, 
+  Gamepad2, 
+  Pickaxe, 
+  Shield, 
+  Truck, 
+  Search, 
+  X, 
+  ChevronDown 
+} from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
 
 export default function Sidebar({
@@ -12,15 +28,20 @@ export default function Sidebar({
   mobileOpen,
   setMobileOpen
 }) {
-  const navItems = [
-    { id: 'home', label: 'Genel Bakış', icon: Home },
-    { id: 'play', label: 'Nasıl Oynanır', icon: Gamepad2 },
-    { id: 'skills', label: 'Yetenek Ağacı', icon: Swords },
+  const isGuideTab = ['early', 'mid', 'endgame'].includes(activeTab);
+  const [guidesOpen, setGuidesOpen] = useState(isGuideTab);
+
+  // Keep guides open if user is on any guide page
+  useEffect(() => {
+    if (isGuideTab) {
+      setGuidesOpen(true);
+    }
+  }, [activeTab, isGuideTab]);
+
+  const guideSubItems = [
     { id: 'early', label: 'Başlangıç Rehberleri', icon: Sunrise },
     { id: 'mid', label: 'Orta Seviye Rehberler', icon: Scale },
     { id: 'endgame', label: 'İleri Seviye Rehberler', icon: Skull },
-    { id: 'legendary', label: 'Efsanevi Eşyalar', icon: Sparkles },
-    { id: 'commands', label: 'Sunucu Komutları', icon: Terminal },
   ];
 
   const treeItems = [
@@ -36,10 +57,21 @@ export default function Sidebar({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleGuidesMainClick = () => {
+    if (!isGuideTab) {
+      setActiveTab('early');
+      setGuidesOpen(true);
+      setMobileOpen(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      setGuidesOpen(!guidesOpen);
+    }
+  };
+
   const content = (
     <div className="flex flex-col h-full bg-sow-card/95 backdrop-blur-md border-r border-sow-border select-none">
       
-      {/* Top Logo & Title (Görsel sığacak şekilde 16:9 object-contain) */}
+      {/* Top Logo & Title (16:9 banner object-contain) */}
       <div className="p-4 border-b border-sow-border flex items-center justify-between">
         <div 
           className="flex items-center gap-3 cursor-pointer" 
@@ -95,56 +127,163 @@ export default function Sidebar({
           Kılavuz Menüsü
         </div>
 
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = activeTab === item.id;
+        {/* 1. Genel Bakış */}
+        <button
+          onClick={() => handleNavClick('home')}
+          className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+            activeTab === 'home'
+              ? 'bg-terracotta text-seedling shadow-terracotta'
+              : 'text-mist hover:text-seedling hover:bg-sow'
+          }`}
+        >
+          <div className="flex items-center gap-2.5">
+            <Home className={`w-4 h-4 ${activeTab === 'home' ? 'text-sprout' : 'text-mist'}`} />
+            <span>Genel Bakış</span>
+          </div>
+          {activeTab === 'home' && <span className="w-1.5 h-1.5 rounded-full bg-sprout" />}
+        </button>
 
-          return (
-            <div key={item.id} className="space-y-1">
-              <button
-                onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
-                  isActive
-                    ? 'bg-terracotta text-seedling shadow-terracotta'
-                    : 'text-mist hover:text-seedling hover:bg-sow'
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-sprout' : 'text-mist'}`} />
-                  <span>{item.label}</span>
-                </div>
-                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-sprout" />}
-              </button>
+        {/* 2. Nasıl Oynanır */}
+        <button
+          onClick={() => handleNavClick('play')}
+          className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+            activeTab === 'play'
+              ? 'bg-terracotta text-seedling shadow-terracotta'
+              : 'text-mist hover:text-seedling hover:bg-sow'
+          }`}
+        >
+          <div className="flex items-center gap-2.5">
+            <Gamepad2 className={`w-4 h-4 ${activeTab === 'play' ? 'text-sprout' : 'text-mist'}`} />
+            <span>Nasıl Oynanır</span>
+          </div>
+          {activeTab === 'play' && <span className="w-1.5 h-1.5 rounded-full bg-sprout" />}
+        </button>
 
-              {/* Sub-tree links if on skills tab */}
-              {item.id === 'skills' && isActive && (
-                <div className="ml-5 pl-2.5 border-l border-sow-border space-y-1 pt-1 pb-1">
-                  {treeItems.map((tree) => {
-                    const TreeIcon = tree.icon;
-                    const isTreeSelected = selectedTree === tree.id;
-                    return (
-                      <button
-                        key={tree.id}
-                        onClick={() => {
-                          setSelectedTree(tree.id);
-                          setMobileOpen(false);
-                        }}
-                        className={`w-full flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[11px] font-medium transition-all ${
-                          isTreeSelected
-                            ? 'text-sprout bg-sow-dark font-bold'
-                            : 'text-mist hover:text-seedling'
-                        }`}
-                      >
-                        <TreeIcon className="w-3.5 h-3.5" />
-                        <span>{tree.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
+        {/* 3. Yetenek Ağacı (Accordion) */}
+        <div className="space-y-1">
+          <button
+            onClick={() => handleNavClick('skills')}
+            className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+              activeTab === 'skills'
+                ? 'bg-terracotta text-seedling shadow-terracotta'
+                : 'text-mist hover:text-seedling hover:bg-sow'
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <Swords className={`w-4 h-4 ${activeTab === 'skills' ? 'text-sprout' : 'text-mist'}`} />
+              <span>Yetenek Ağacı</span>
             </div>
-          );
-        })}
+            {activeTab === 'skills' && <span className="w-1.5 h-1.5 rounded-full bg-sprout" />}
+          </button>
+
+          {/* Sub-tree links if on skills tab */}
+          {activeTab === 'skills' && (
+            <div className="ml-5 pl-2.5 border-l border-sow-border space-y-1 pt-1 pb-1">
+              {treeItems.map((tree) => {
+                const TreeIcon = tree.icon;
+                const isTreeSelected = selectedTree === tree.id;
+                return (
+                  <button
+                    key={tree.id}
+                    onClick={() => {
+                      setSelectedTree(tree.id);
+                      setMobileOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[11px] font-medium transition-all ${
+                      isTreeSelected
+                        ? 'text-sprout bg-sow-dark font-bold'
+                        : 'text-mist hover:text-seedling'
+                    }`}
+                  >
+                    <TreeIcon className="w-3.5 h-3.5" />
+                    <span>{tree.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* 4. REHBERLER (Ana Menü - Accordion Açılır Kapanır) */}
+        <div className="space-y-1">
+          <button
+            onClick={handleGuidesMainClick}
+            className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+              isGuideTab
+                ? 'bg-terracotta/90 text-seedling shadow-terracotta'
+                : 'text-mist hover:text-seedling hover:bg-sow'
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <BookOpen className={`w-4 h-4 ${isGuideTab ? 'text-sprout' : 'text-mist'}`} />
+              <span>Rehberler</span>
+            </div>
+            <ChevronDown 
+              className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                guidesOpen ? 'rotate-180 text-sprout' : 'text-mist'
+              }`} 
+            />
+          </button>
+
+          {/* Rehberler Alt Menüsü */}
+          {guidesOpen && (
+            <div className="ml-5 pl-2.5 border-l border-sow-border space-y-1 pt-1 pb-1">
+              {guideSubItems.map((sub) => {
+                const SubIcon = sub.icon;
+                const isSubActive = activeTab === sub.id;
+                return (
+                  <button
+                    key={sub.id}
+                    onClick={() => handleNavClick(sub.id)}
+                    className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-medium transition-all ${
+                      isSubActive
+                        ? 'text-sprout bg-sow-dark font-bold shadow-sm'
+                        : 'text-mist hover:text-seedling hover:bg-sow/50'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <SubIcon className={`w-3.5 h-3.5 shrink-0 ${isSubActive ? 'text-sprout' : 'text-mist'}`} />
+                      <span className="truncate">{sub.label}</span>
+                    </div>
+                    {isSubActive && <span className="w-1 h-1 rounded-full bg-sprout shrink-0 ml-1" />}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* 5. Efsanevi Eşyalar */}
+        <button
+          onClick={() => handleNavClick('legendary')}
+          className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+            activeTab === 'legendary'
+              ? 'bg-terracotta text-seedling shadow-terracotta'
+              : 'text-mist hover:text-seedling hover:bg-sow'
+          }`}
+        >
+          <div className="flex items-center gap-2.5">
+            <Sparkles className={`w-4 h-4 ${activeTab === 'legendary' ? 'text-sprout' : 'text-mist'}`} />
+            <span>Efsanevi Eşyalar</span>
+          </div>
+          {activeTab === 'legendary' && <span className="w-1.5 h-1.5 rounded-full bg-sprout" />}
+        </button>
+
+        {/* 6. Sunucu Komutları */}
+        <button
+          onClick={() => handleNavClick('commands')}
+          className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+            activeTab === 'commands'
+              ? 'bg-terracotta text-seedling shadow-terracotta'
+              : 'text-mist hover:text-seedling hover:bg-sow'
+          }`}
+        >
+          <div className="flex items-center gap-2.5">
+            <Terminal className={`w-4 h-4 ${activeTab === 'commands' ? 'text-sprout' : 'text-mist'}`} />
+            <span>Sunucu Komutları</span>
+          </div>
+          {activeTab === 'commands' && <span className="w-1.5 h-1.5 rounded-full bg-sprout" />}
+        </button>
 
       </div>
 
