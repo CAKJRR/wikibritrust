@@ -1,76 +1,106 @@
 import React, { useState } from 'react';
+import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-import HeroBanner from './components/HeroBanner';
+import HomeSection from './components/HomeSection';
 import SkillSection from './components/SkillSection';
-import BossesSection from './components/BossesSection';
-import FarmingSection from './components/FarmingSection';
+import ProgressionSection from './components/ProgressionSection';
 import LegendarySection from './components/LegendarySection';
 import CommandsSection from './components/CommandsSection';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('skills');
+  const [activeTab, setActiveTab] = useState('home'); // Default is 'home' (Genel Bakış)
+  const [selectedTree, setSelectedTree] = useState('Gathercraft');
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleQuickFilter = (keyword) => {
-    if (keyword === 'God-Tier') {
-      setActiveTab('skills');
-      setSearchQuery('');
-    } else if (keyword === 'Harbinger') {
-      setActiveTab('bosses');
-      setSearchQuery('');
-    } else if (keyword === 'Cloth') {
-      setActiveTab('farming');
-      setSearchQuery('');
-    } else if (keyword === 'Extra Magical') {
-      setActiveTab('legendary');
-      setSearchQuery('');
-    }
-    window.scrollTo({ top: 380, behavior: 'smooth' });
+  const tabTitles = {
+    home: 'Genel Bakış & Başlangıç',
+    skills: 'Yetenek Ağacı (Worlds V2)',
+    early: 'Erken Oyun (Early Game)',
+    mid: 'Orta Oyun (Mid Game)',
+    endgame: 'Oyun Sonu (Endgame)',
+    legendary: 'Efsanevi Eşyalar & Tamir',
+    commands: 'Sunucu Komutları',
   };
 
   return (
-    <div className="min-h-screen bg-sow-dark text-seedling flex flex-col font-sans selection:bg-terracotta selection:text-seedling">
+    <div className="min-h-screen bg-sow-dark text-seedling flex font-sans selection:bg-terracotta selection:text-seedling">
       
-      {/* Top Navbar */}
-      <Header
+      {/* 1. Sol Sidebar (Desktop Sabit, Mobilde Açılır Çekmece) */}
+      <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        selectedTree={selectedTree}
+        setSelectedTree={setSelectedTree}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
       />
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      {/* 2. Sağ Ana İçerik Alanı (Sidebar genişliği kadar sola boşluk) */}
+      <div className="flex-1 lg:pl-64 flex flex-col min-w-0">
         
-        {/* Hero Welcome Banner */}
-        <HeroBanner onQuickFilter={handleQuickFilter} />
+        {/* Üst Bar (Sadeleştirilmiş, Repo Linki Yok, Arama + Menü Butonu) */}
+        <Header
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          setMobileOpen={setMobileOpen}
+          activeTabTitle={tabTitles[activeTab]}
+        />
 
-        {/* Dynamic Tab Views */}
-        {activeTab === 'skills' && (
-          <SkillSection searchQuery={searchQuery} />
-        )}
+        {/* Ana İçerik Sayfası */}
+        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          
+          {/* Anasayfa / Genel Bakış (Varsayılan Açılış) */}
+          {activeTab === 'home' && (
+            <HomeSection
+              setActiveTab={setActiveTab}
+              setSelectedTree={setSelectedTree}
+            />
+          )}
 
-        {activeTab === 'bosses' && (
-          <BossesSection />
-        )}
+          {/* Yetenek Ağacı (Oyun İçi Düğüm Haritası + Kartlar) */}
+          {activeTab === 'skills' && (
+            <SkillSection
+              searchQuery={searchQuery}
+              selectedTree={selectedTree}
+              setSelectedTree={setSelectedTree}
+            />
+          )}
 
-        {activeTab === 'farming' && (
-          <FarmingSection />
-        )}
+          {/* Erken Oyun (Early Game) */}
+          {activeTab === 'early' && (
+            <ProgressionSection stage="early" />
+          )}
 
-        {activeTab === 'legendary' && (
-          <LegendarySection />
-        )}
+          {/* Orta Oyun (Mid Game) */}
+          {activeTab === 'mid' && (
+            <ProgressionSection stage="mid" />
+          )}
 
-        {activeTab === 'commands' && (
-          <CommandsSection />
-        )}
+          {/* Oyun Sonu (Endgame) */}
+          {activeTab === 'endgame' && (
+            <ProgressionSection stage="endgame" />
+          )}
 
-      </main>
+          {/* Efsanevi Eşyalar & Tamir */}
+          {activeTab === 'legendary' && (
+            <LegendarySection />
+          )}
 
-      {/* Footer */}
-      <Footer />
+          {/* Sunucu Komutları */}
+          {activeTab === 'commands' && (
+            <CommandsSection />
+          )}
+
+        </main>
+
+        {/* Sadeleştirilmiş Footer (Sadece Logo & Instagram @cakjrr) */}
+        <Footer />
+
+      </div>
 
     </div>
   );

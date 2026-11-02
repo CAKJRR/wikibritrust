@@ -9,8 +9,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '100% Instant 1-hit Mine',
-    desc: 'Maden cevherlerine (Taş, Metal, Kükürt, HQM) tek vuruşta anında kırma sağlar. Madencilik hızını 10 katına çıkarır.',
-    synergy: 'Vein Seeker + Second Strike + Prospector ile maden çiftliğinde kırıcı güç sağlar.'
+    desc: 'Maden nodlarına (Taş, Metal, Kükürt, HQM) tek vuruşta kırma özelliği verir. Maden kırma süresini ortadan kaldırır.',
+    synergy: 'Vein Seeker + Second Strike + Prospector ile maden kasmayı en üst hıza taşır.'
   },
   {
     id: 'vein-seeker',
@@ -21,8 +21,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '100% Auto Hotspot',
-    desc: 'Maden nodlarındaki parlayan noktaya nişan alma zorunluluğunu kaldırır. Her vuruş otomatik olarak kritik parlama noktası sayılır.',
-    synergy: 'Shatterpoint ile birleştiğinde madene sadece dokunmanız yeterlidir.'
+    desc: 'Madenlerdeki parlayan noktaya (hotspot) nişan alma zorunluluğunu kaldırır. Her vuruş otomatik olarak kritik nokta sayılır.',
+    synergy: 'Shatterpoint ile birleştiğinde madene doğrudan vurup anında kırabilirsiniz.'
   },
   {
     id: 'clearcut',
@@ -33,8 +33,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '35% Chain Harvest (10m)',
-    desc: 'Bir ağacı kestiğinizde %35 şansla 10 metre çapındaki bütün çevre ağaçları tek seferde zincirleme hasat eder.',
-    synergy: 'Felling Blow ile birleştiğinde tüm ormanı saniyeler içinde odun deposuna çevirir.'
+    desc: 'Bir ağaç devrildiğinde %35 şansla 10 metre yarıçaptaki çevre ağaçları da tek seferde zincirleme hasat eder.',
+    synergy: 'Felling Blow ile birlikte fırınlar için gereken odun ihtiyacını çok hızlı karşılar.'
   },
   {
     id: 'smash-n-grab',
@@ -45,8 +45,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '1-Hit Auto Loot Barrels',
-    desc: 'Varillere tek vuruşta patlatır ve içinden çıkan tüm hurda ve bileşenleri doğrudan envanterinize çeker.',
-    synergy: 'Salvage King (4x Scrap) ve Parts Hunter ile yol boyu farm yapmayı çocuk oyuncağına çevirir.'
+    desc: 'Yoldaki ve anıtlardaki varilleri tek vuruşta kırar; çıkan hurda ve bileşenleri otomatik olarak çantaya çeker.',
+    synergy: 'Salvage King (4x Scrap) ve Parts Hunter ile yol boyu hurda toplamayı hızlandırır.'
   },
   {
     id: 'prospector',
@@ -57,8 +57,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+75% Ore Yield',
-    desc: 'Kazılan her maden nodundan %75 daha fazla cevher (Taş, Metal, Kükürt, HQM) elde edilmesini sağlar.',
-    synergy: 'Sülfür ve HQM farmında cephane üretim kapasitenizi neredeyse ikiye katlar.'
+    desc: 'Kazılan madenlerden (Taş, Metal, Kükürt, HQM) %75 daha fazla cevher elde edilmesini sağlar.',
+    synergy: 'Sülfür ve HQM madenlerinde barut ve zırh üretimini doğrudan destekler.'
   },
   {
     id: 'second-strike',
@@ -69,8 +69,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '35% Instant Node Respawn',
-    desc: 'Bir maden nodunu kırdığınızda %35 şansla aynı yerde anında yeni bir nod doğmasını sağlar.',
-    synergy: 'Aynı noktada art arda 3-4 kez maden kırarak yerinizden kıpırdamadan envanter doldurabilirsiniz.'
+    desc: 'Kırılan maden nodunun %35 şansla aynı yerde anında yeniden doğmasını sağlar.',
+    synergy: 'Aynı noktada art arda nod kırarak yer değiştirmeden hızlıca çanta doldurabilirsiniz.'
   },
   {
     id: 'salvage-king',
@@ -82,7 +82,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+300% Scrap (4x Scrap)',
     desc: 'Varillerden ve sandıklardan 4 kat daha fazla hurda (Scrap) verir.',
-    synergy: 'Wipe başında saatler süren teknoloji açma sürecini dakikalara indirir.'
+    synergy: 'Wipe başında teknoloji ağacını (Tech Tree) çok daha erken tamamlamanızı sağlar.'
   },
   {
     id: 'parts-hunter',
@@ -93,8 +93,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '45% Component Dupe',
-    desc: 'Kutulardan ve varillerden çıkan yay, boru, dişli gibi bileşenleri %45 ihtimalle ikiye katlar.',
-    synergy: 'Geri dönüştürücüye girerken dağ gibi hurda ve yüksek kalite metal elde etmenizi sağlar.'
+    desc: 'Sandıklardan ve varillerden çıkan bileşenleri (yay, dişli, boru vb.) %45 ihtimalle ikiye katlar.',
+    synergy: 'Geri dönüştürücüye (Recycler) atıldığında ekstra hurda ve HQM girdisi sağlar.'
   },
   {
     id: 'rapid-recycle',
@@ -105,8 +105,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '-2.5s Recycler Tick',
-    desc: 'Geri dönüştürücünün çalışma hızını turbo seviyeye çıkarır; yüzlerce bileşeni saniyeler içinde eritir.',
-    synergy: 'Outpost veya Güvenli Bölge kuyruklarında bekleme derdini bitirir.'
+    desc: 'Geri dönüştürücünün çalışma hızını artırır; bileşenleri çok daha kısa sürede eritir.',
+    synergy: 'Outpost veya Güvenli Bölgede hurda eritirken bekleme süresini azaltır.'
   },
   {
     id: 'felling-blow',
@@ -118,7 +118,7 @@ export const SKILLS_DATA = [
     cost: '5 SP',
     benefit: '100% Instant 1-hit Tree',
     desc: 'Ağaçlara tek vuruşta devirme özelliği kazandırır.',
-    synergy: 'Clearcut ile birlikte odun sorununu kökten çözer.'
+    synergy: 'Clearcut ile zincirleme odun hasadında temel oluşturur.'
   },
   {
     id: 'timberfall',
@@ -130,7 +130,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+75% Wood Yield',
     desc: 'Ağaç keserken elde edilen odun miktarını %75 artırır.',
-    synergy: 'Fırın yakıtı ve kömür üretiminde hammadde garantisi.'
+    synergy: 'Büyük üs inşaatlarında ve fırın yakıtında odun tasarrufu sağlar.'
   },
   {
     id: 'tempered-steel',
@@ -141,8 +141,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '-45% Pickaxe Wear',
-    desc: 'Kazmaların ve Jackhammerların kullanım sırasındaki aşınmasını %45 azaltır.',
-    synergy: 'Mad’s Magical Tools kazmalarının 2 kat daha uzun süre dayanmasını sağlar.'
+    desc: 'Kazmaların ve Jackhammer\'ların kullanım sırasında aşınmasını %45 azaltır.',
+    synergy: 'Mad’s Magical aletlerin tamir masasına gitme aralığını iki katına çıkarır.'
   },
   {
     id: 'foragers-fortune',
@@ -153,8 +153,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+225% Wild Yield',
-    desc: 'Doğada kendiliğinden yetişen yabani kenevir, mantar ve meyvelerden +%225 ekstra verim.',
-    synergy: 'Wipe başında kumaş sıkıntısını anında aşmanızı sağlar.'
+    desc: 'Doğada kendiliğinden yetişen yabani kenevir, mantar ve meyvelerden +%225 ekstra verim verir.',
+    synergy: 'Wipe başında kumaş ve yatak ihtiyacını ilk dakikalarda çözer.'
   },
 
   // --- SURVIVALCRAFT ---
@@ -168,7 +168,7 @@ export const SKILLS_DATA = [
     cost: '1 SP',
     benefit: '+50% Planted Crop Yield',
     desc: 'Planter box içerisine ekilen tarım mahsullerinden (Kenevir, Berry, Patates) %50 daha fazla ürün verir.',
-    synergy: 'God-Seed (GGGYYY) kenevir çiftliği ve Reaping Spade ile sunucunun en zengin RP tüccarı olmanızı sağlar.'
+    synergy: 'God-Seed (GGGYYY) kenevir çiftliği ve Reaping Spade ile kumaş üretimini katlar.'
   },
   {
     id: 'made-to-order',
@@ -179,8 +179,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '100% Instant Craft',
-    desc: 'Kara listede olmayan tüm eşyaları (Barut, Mermi, C4, Tıbbi İğne, Zırh) SÜRE BEKLEMEDEN anında üretir.',
-    synergy: 'Dakikalarca zanaat sırası bekleme çilesini tamamen bitirir.'
+    desc: 'Kara listede olmayan eşyaları (Barut, Mermi, C4, Tıbbi İğne, Zırh) bekleme süresi olmadan anında üretir.',
+    synergy: 'Büyük miktarda mühimmat veya patlayıcı üretirken zaman kaybını önler.'
   },
   {
     id: 'refined-blueprints',
@@ -191,8 +191,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '25% Craft Dupe',
-    desc: 'Zanaat yaparken %25 şansla ürettiğiniz eşyayı bedavadan bir adet daha kopyalar.',
-    synergy: '100 adet C4 veya Roket ürettiğinizde ortalama 25 tanesi bedavaya gelir!'
+    desc: 'Zanaat yaparken %25 şansla üretilen eşyayı bedavadan bir adet daha kopyalar.',
+    synergy: 'Roket ve C4 üretiminde hammadde maliyetini doğrudan düşürür.'
   },
   {
     id: 'feather-fall',
@@ -203,8 +203,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '100% Fall Damage Immunity',
-    desc: 'Düşme hasarına karşı %100 bağışıklık sağlar. Helikopterden veya dağın zirvesinden atlasanız bile canınız gitmez.',
-    synergy: 'Monument kulelerinden kaçarken ve heli inişlerinde eşsiz özgürlük verir.'
+    desc: 'Düşme hasarına karşı %100 bağışıklık sağlar. Yüksek anıtlardan veya dağlardan atlasanız bile hasar almazsınız.',
+    synergy: 'Monument çatılarından inişlerde ve helikopter atlayışlarında can kaybını sıfırlar.'
   },
   {
     id: 'bargain-hunter',
@@ -215,8 +215,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '75% Scrap Research Refund',
-    desc: 'Araştırma masasında teknoloji ağacını açarken harcanan hurdanın %75\'ini geri iade eder.',
-    synergy: '1000 Scrap harcadığınızda 750 Scrap anında cebinize geri döner.'
+    desc: 'Araştırma masasında teknoloji ağacı açılırken harcanan hurdanın %75\'ini geri iade eder.',
+    synergy: '1000 Scrap harcandığında 750 Scrap doğrudan iade edilir.'
   },
   {
     id: 'lightweight',
@@ -228,7 +228,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+75% Tea Duration',
     desc: 'İçilen çayların (Ore Tea, Scrap Tea, Max Health Tea) etki süresini %75 uzatır.',
-    synergy: 'Pure çayların süresini neredeyse iki katına çıkararak buff verimliliğini tavan yaptırır.'
+    synergy: 'Pure seviye maden ve hurda çaylarının süresini neredeyse iki katına çıkarır.'
   },
   {
     id: 'geneticist',
@@ -239,8 +239,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '/setgenes Command (3h Cooldown)',
-    desc: '3 saatte bir bitkilerin genetiğini doğrudan belirlemenizi sağlar (örn: GGGYYY God-Seed). Çaprazlama çilesini bitirir.',
-    synergy: 'Bountiful Harvest ile birlikte sınırsız bez ve kenevir gelir kapısı açar.'
+    desc: '3 saatte bir bitkilerin genetiğini doğrudan belirlemenizi sağlar (örn: GGGYYY God-Seed). Çaprazlama zahmetini bitirir.',
+    synergy: 'Bountiful Harvest ile birlikte kumaş çiftliğini en yüksek verime ulaştırır.'
   },
   {
     id: 'healing-factor',
@@ -252,7 +252,7 @@ export const SKILLS_DATA = [
     cost: '1 SP',
     benefit: '+0.5 Health per Second',
     desc: 'Saniyede 0.5 can pasif olarak kendiliğinden yenilenir.',
-    synergy: 'Savaş sonralarında ve zehirlenmelerde bandaj harcamadan full canlı kalırsınız.'
+    synergy: 'Çatışma aralarında ve zehirlenmelerde bandaj harcamadan canı yüksek tutar.'
   },
   {
     id: 'well-crafted',
@@ -263,8 +263,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '-45% Armor Wear',
-    desc: 'Zırhların darbe aldıkça yıpranmasını %45 azaltır.',
-    synergy: 'Efsanevi HQM ve Leviathan zırhlarının ömrünü iki katına çıkarır.'
+    desc: 'Zırhların darbe aldıkça yıpranmasını %45 oranında azaltır.',
+    synergy: 'HQM ve Leviathan zırh setlerinin dayanıklılık süresini uzatır.'
   },
   {
     id: 'waste-not',
@@ -275,8 +275,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+75% Skinning Yield',
-    desc: 'Hayvan derisi yüzerken %75 daha fazla deri, hayvan yağı ve kemik parçası verir.',
-    synergy: 'Ayı avlayarak binlerce Low Grade Fuel ve kemik üretmenizi sağlar.'
+    desc: 'Hayvan derisi yüzerken %75 daha fazla deri, hayvan yağı ve kemik verir.',
+    synergy: 'Ayı avlayarak Low Grade Fuel ve kemik ihtiyacını karşılamayı hızlandırır.'
   },
   {
     id: 'chemical-chef',
@@ -287,8 +287,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '+100 Mixing Table Speed',
-    desc: 'Karıştırma masasının hızını devasa oranda artırır.',
-    synergy: 'Büyük ölçekli barut ve patlayıcı üretim merkezleri için zorunludur.'
+    desc: 'Karıştırma masasının (Mixing Table) çalışma hızını ciddi oranda artırır.',
+    synergy: 'Büyük ölçekli barut üretiminde bekleme süresini düşürür.'
   },
 
   // --- COMBAT ---
@@ -301,8 +301,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '100% Self Explosive Resist',
-    desc: 'Kendi attığınız hiçbir patlayıcıdan (C4, Roket, F1, Satchel, MLRS) ASLA hasar almazsınız.',
-    synergy: 'Sıfır mesafeden (point-blank) kapılara roket sıkabilme ve dar tünellerde bomba atabilme lüksü verir.'
+    desc: 'Kendi attığınız patlayıcılardan (C4, Roket, F1, Satchel, MLRS) hasar almazsınız.',
+    synergy: 'Dar alanlarda veya kapı diplerinde güvenle roket atmanızı sağlar.'
   },
   {
     id: 'aerodynamically-sound',
@@ -313,8 +313,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '+500% Rocket Velocity',
-    desc: 'Roketlerin uçuş hızını 5 katına çıkarır. Roketler mermi gibi dümdüz uçar, yerçekimi düşüşü sıfırlanır.',
-    synergy: 'Uzak mesafeden taret, Bradley veya patrol helikopter vururken ıskalamayı imkansız kılar.'
+    desc: 'Roketlerin uçuş hızını 5 katına çıkarır. Roketler mermi gibi düz gider, düşüş açısı sıfırlanır.',
+    synergy: 'Uzak mesafeden taret, Bradley veya helikopter vururken isabet oranını artırır.'
   },
   {
     id: 'chain-reaction',
@@ -325,8 +325,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '30% Second Explosion Chance',
-    desc: 'Attığınız her patlayıcıda %30 şansla bedavadan İKİNCİ BİR PATLAMA tetikler.',
-    synergy: 'Raid World ve üs patlatmalarında sülfür ve patlayıcı harcamanızı %30 bedavaya getirir.'
+    desc: 'Attığınız her patlayıcıda %30 şansla bedavadan ikinci bir patlama tetikler.',
+    synergy: 'Raid World ve üs patlatmalarında sülfür ve patlayıcı harcamanızı %30 oranında azaltır.'
   },
   {
     id: 'ammo-rationing',
@@ -337,8 +337,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '25% Free Ammo Chance',
-    desc: 'Ateş ettiğiniz her 4 mermiden biri envanterinizden eksilmez (%25 ücretsiz cephane).',
-    synergy: 'M249 veya LR-300 ile tararken mermi tasarrufunu tavan yaptırır.'
+    desc: 'Ateş ettiğiniz her 4 mermiden biri envanterden eksilmez (%25 ücretsiz mermi).',
+    synergy: 'M249 veya LR-300 ile uzun süreli taramalarda mühimmat tasarrufu sağlar.'
   },
   {
     id: 'cold-blooded',
@@ -349,8 +349,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: 'Environmental Cold Immunity',
-    desc: 'Çevresel dondurucu soğuklara karşı tam bağışıklık ve %25 soğuk hasarı direnci.',
-    synergy: 'Kar biyomunda çırılçıplak bile gezseniz donma hasarı almazsınız; gece soğuğunu yok eder.'
+    desc: 'Çevresel dondurucu soğuklara karşı tam bağışıklık ve %25 soğuk direnci sağlar.',
+    synergy: 'Kar biyomunda ve gece saatlerinde soğuktan can kaybetmeyi engeller.'
   },
   {
     id: 'orbital-strike',
@@ -361,8 +361,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP (Owned)',
     benefit: 'On-Demand AirStrike Flare',
-    desc: 'İşaret fişeği fırlatarak gökyüzünden hedefe güdümlü füze yağmuru indirme yeteneği.',
-    synergy: 'Taret tarlalarını ve kalabalık elit NPC kamplarını tek hamlede haritadan siler.'
+    desc: 'İşaret fişeği fırlatarak gökyüzünden hedefe güdümlü füze yağmuru indirme yeteneğidir.',
+    synergy: 'Taret tarlalarını ve kalabalık NPC kamplarını uzaktan temizlemek için kullanılır.'
   },
   {
     id: 'life-leech',
@@ -373,8 +373,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '5 SP',
     benefit: '1% Damage Healed (Vampirism)',
-    desc: 'Düşmanlara verdiğiniz her hasarın %1\'i doğrudan can barınıza aktarılır.',
-    synergy: 'Deep Sea ve Cobalt gemilerinde bilim insanlarını tararken otomatik olarak ölümsüz kalırsınız.'
+    desc: 'Düşmanlara verdiğiniz hasarın %1\'i doğrudan can barınıza aktarılır.',
+    synergy: 'Deep Sea ve Cobalt gemilerinde bilim insanı temizlerken canı dolu tutmayı sağlar.'
   },
   {
     id: 'armored',
@@ -385,8 +385,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '-30% Scientist Damage Taken',
-    desc: 'Bilim insanlarından ve elit NPC\'lerden alınan hasarı %30 azaltır.',
-    synergy: 'Deep Sea kargo baskınlarında taret ve tüfek hasarlarına karşı sizi tanka dönüştürür.'
+    desc: 'Bilim insanlarından ve elit NPC\'lerden alınan hasarı %30 oranında azaltır.',
+    synergy: 'Deep Sea Cobalt kargo baskınlarında taret ve tüfek hasarına karşı korur.'
   },
   {
     id: 'man-hunter',
@@ -398,7 +398,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+30% Damage to Scientists',
     desc: 'Bilim insanlarına ve insan NPC\'lere verilen hasarı %30 artırır.',
-    synergy: 'Armored ve Life Leech ile birleştiğinde PvE içeriklerini çocuk oyuncağına çevirir.'
+    synergy: 'Armored ve Life Leech ile birlikte PvE çatışmalarını hızlandırır.'
   },
   {
     id: 'extra-rounds',
@@ -410,7 +410,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+30% Magazine Capacity',
     desc: 'Tüm silahların şarjör kapasitesini %30 artırır (AK-47: 39 mermi, M249: 130 mermi, LR-300: 39 mermi).',
-    synergy: 'Şarjör değiştirme süresini azaltarak kesintisiz ateş gücü sağlar.'
+    synergy: 'Şarjör değiştirme sıklığını azaltarak kesintisiz ateş gücü sağlar.'
   },
   {
     id: 'elite-manufacturing',
@@ -422,7 +422,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '-45% Weapon Wear',
     desc: 'Ateş ettikçe silahların aşınmasını %45 oranında azaltır.',
-    synergy: 'Efsanevi altın silahlarınızın dayanıklılığını korur, tamir sıklığını yarıya düşürür.'
+    synergy: 'Efsanevi altın silahların dayanıklılığını korur, tamir aralığını uzatır.'
   },
   {
     id: 'shockwave',
@@ -433,8 +433,8 @@ export const SKILLS_DATA = [
     type: 'Multi-Tier',
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '+60% Explosive Radius',
-    desc: 'Bütün patlayıcıların sıçrama hasarı (splash damage) alanını %60 genişletir.',
-    synergy: 'Base raidlerinde 4 duvarın kesişimine sıkılan tek roketle tüm odanın yıkılmasını sağlar.'
+    desc: 'Patlayıcıların sıçrama hasarı (splash damage) alanını %60 genişletir.',
+    synergy: 'Base raidlerinde duvar kesişimlerine sıkılan roketin çevre yapılara tam hasar vermesini sağlar.'
   },
 
   // --- VEHICLES ---
@@ -447,8 +447,8 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '+150% Heli Acceleration',
-    desc: 'Minicopter ve Scrap Helikopter sürerken ivmelenmeyi %150 artırır. Helikopter roket gibi kalkar ve hızlanır.',
-    synergy: 'Monumentler arası seyahat ve petrol platformu uçuş sürelerini yarı yarıya indirir.'
+    desc: 'Minicopter ve Scrap Helikopter sürerken ivmelenmeyi %150 artırır. Helikopter kalkışı ve hızlanması hızlanır.',
+    synergy: 'Monumentler ve petrol platformları arasındaki uçuş süresini yarıya indirir.'
   },
   {
     id: 'gas-guru',
@@ -460,7 +460,7 @@ export const SKILLS_DATA = [
     cost: '1 SP / rank (Maks 3/3)',
     benefit: '-75% Fuel Consumption',
     desc: 'Bindiğiniz tüm araçların (Heli, Tekne, Araba, Tugboat, Denizaltı) yakıt tüketimini %75 oranında azaltır.',
-    synergy: 'Çantanızda sadece bir avuç Low Grade Fuel ile saatlerce uçuş yapabilmenizi sağlar.'
+    synergy: 'Uzun menzilli seyahatlerde Low Grade Fuel tasarrufu sağlar.'
   },
   {
     id: 'efficient-equestrian',
@@ -472,7 +472,7 @@ export const SKILLS_DATA = [
     cost: '1 SP',
     benefit: '+200% Mounted Horse Speed',
     desc: 'Ata bindiğinizde atın koşu hızını %200 (3 katına) çıkarır.',
-    synergy: 'Sıfır yakıt maliyetiyle haritada yıldırım gibi gezinme özgürlüğü sağlar.'
+    synergy: 'Sıfır yakıt maliyetiyle haritada hızlı seyahat etmeyi sağlar.'
   },
   {
     id: 'seasoned-sailor',
@@ -484,7 +484,7 @@ export const SKILLS_DATA = [
     cost: '1 SP',
     benefit: '+100% Boat Acceleration',
     desc: 'Tekne ve Tugboat sürerken kalkış ve ivmelenmeyi 2 katına çıkarır.',
-    synergy: 'Deep Sea Cobalt kargo gemilerini kovalarken su üstü manevrasını zirveye taşır.'
+    synergy: 'Deep Sea Cobalt kargo gemilerini kovalarken su üstü manevrasını güçlendirir.'
   },
   {
     id: 'champion-cyclist',
@@ -495,7 +495,7 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '+100% Bike Acceleration',
-    desc: 'Bisiklet ve motorlu bisiklet sürerken hızlanmayı %100 artırır.',
-    synergy: 'Wipe başı seyahatlerinde pratik hızlanma sağlar.'
+    desc: 'Bisiklet sürerken hızlanmayı %100 artırır.',
+    synergy: 'Wipe başı yolculuklarında pratik hızlanma sağlar.'
   }
 ];
