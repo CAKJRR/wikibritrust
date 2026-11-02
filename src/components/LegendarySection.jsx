@@ -195,45 +195,32 @@ export default function LegendarySection({ searchQuery = '' }) {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-sow-border/60">
-                    {filteredTools.map((tool) => {
-                      const isConsumable = tool.isConsumable;
-
-                      return (
-                        <tr 
-                          key={tool.id} 
-                          className={`transition-colors ${
-                            isConsumable ? 'bg-terracotta/10 hover:bg-terracotta/15' : 'hover:bg-sow/50'
-                          }`}
-                        >
-                          <td className="py-4 px-5 font-serif font-bold text-seedling whitespace-nowrap">
-                            <div className="flex items-center gap-2">
-                              {isConsumable && <Sparkles className="w-4 h-4 text-sprout shrink-0" />}
-                              <span>{tool.name}</span>
-                            </div>
-                          </td>
-                          <td className="py-4 px-5 text-seedling-muted font-medium leading-relaxed">
-                            <p>{tool.effect}</p>
-                            {tool.highlight && (
-                              <p className="text-[11px] text-terracotta-light font-semibold mt-1">
-                                ✦ {tool.highlight}
-                              </p>
-                            )}
-                          </td>
-                          <td className="py-4 px-5 text-mist whitespace-nowrap">
-                            {tool.dropSource}
-                          </td>
-                          <td className="py-4 px-5 whitespace-nowrap">
-                            <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${
-                              isConsumable 
-                                ? 'bg-terracotta text-seedling border-terracotta shadow-sm font-bold' 
-                                : 'bg-sow-dark border-sow-border text-terracotta-light'
-                            }`}>
-                              {tool.category}
-                            </span>
-                          </td>
-                        </tr>
-                      );
-                    })}
+                    {filteredTools.map((tool) => (
+                      <tr 
+                        key={tool.id} 
+                        className="hover:bg-sow/50 transition-colors"
+                      >
+                        <td className="py-4 px-5 font-serif font-bold text-seedling whitespace-nowrap">
+                          {tool.name}
+                        </td>
+                        <td className="py-4 px-5 text-seedling-muted font-medium leading-relaxed">
+                          <p>{tool.effect}</p>
+                          {tool.highlight && (
+                            <p className="text-[11px] text-terracotta-light font-semibold mt-1">
+                              ✦ {tool.highlight}
+                            </p>
+                          )}
+                        </td>
+                        <td className="py-4 px-5 text-mist whitespace-nowrap">
+                          {tool.dropSource}
+                        </td>
+                        <td className="py-4 px-5 whitespace-nowrap">
+                          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-sow-dark border border-terracotta/40 text-terracotta-light">
+                            {tool.category}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

@@ -6,12 +6,12 @@ export const DURABILITY_GUIDE = {
   explanation: 'Rust oyununda bir eşyayı Tamir Masasında (Repair Bench) tamir ettikçe kalıcı kırmızı bir bar birikir. Kırmızı bar eşyanın maksimum canını sınırlar ve kırmızı bar tamamen dolduğunda (fullenirse) o eşya bir daha asla tamir edilemez, kırıldığında tamamen yok olur. Brits PvE Worlds V2 sunucusunda bu sistem şu kurallarla çalışır:',
   mechanics: [
     {
-      title: 'Mad’s Extra Magical (Tek Kullanımlık Kurtarıcı)',
+      title: 'Mad’s Extra Magical Tools (Tek Kullanımlık Kurtarıcı)',
       desc: 'Bu bir alet DEĞİLDİR; tek kullanımlık özel bir tamir eşyasıdır. Envanterde sürükle-bırak (Drag & Drop) yapılarak canı azalmış eşyaların üzerine bırakılır. Eşyayı yok olmaktan kurtaran tek mekanizmadır: Kalıcı kırmızı barı tamamen sıfırlar ve eşyayı %100 orijinal yeşil canına geri döndürür.'
     },
     {
       title: 'Yeşil Bar ve Kırmızı Bar Farkı',
-      desc: 'Yeşil bar eşyanın mevcut kullanım canıdır. Kırmızı bar ise tamir masası kullandıkça biriken aşınma sınırıdır. Kırmızı bar dolduğunda eşya kilitlenir ve tamir edilemez hale gelir. Normal tamir masası kırmızı barı silemez; yalnızca Mad’s Extra Magical kırmızı barı tamamen silebilir.'
+      desc: 'Yeşil bar eşyanın mevcut kullanım canıdır. Kırmızı bar ise tamir masası kullandıkça biriken aşınma sınırıdır. Kırmızı bar dolduğunda eşya kilitlenir ve tamir edilemez hale gelir. Normal tamir masası kırmızı barı silemez; yalnızca Mad’s Extra Magical Tools kırmızı barı tamamen silebilir.'
     },
     {
       title: 'Yetenek Ağacı Eskimeyi Yavaşlatır (%45 Koruma)',
@@ -21,18 +21,9 @@ export const DURABILITY_GUIDE = {
 };
 
 // ==========================================
-// 2. TÜM EFSANEVİ ALETLER & ÖZEL TAMİR EŞYALARI
+// 2. TÜM EFSANEVİ ALETLER & TAMİR EŞYALARI (DOĞAL SIRALAMA)
 // ==========================================
 export const LEGENDARY_TOOLS = [
-  {
-    id: 'mads-extra-magical',
-    name: 'Mad’s Extra Magical',
-    category: 'Özel Tamir Eşyası (Tek Kullanımlık)',
-    isConsumable: true,
-    dropSource: 'Nightmare Raids, Legendary Helis, Deep Sea Kasaları',
-    effect: 'Bir alet değildir; tek kullanımlık sürükle-bırak tamir eşyasıdır. Envanterde canı azalmış herhangi bir eşyanın üzerine sürüklendiğinde kalıcı kırmızı bar cezasını tamamen sıfırlar ve eşyayı %100 maksimum yeşil cana ulaştırır.',
-    highlight: 'Kırmızı barı dolup bir daha tamir edilemeyecek eşyaları yok olmaktan kurtaran tek yöntemdir.'
-  },
   {
     id: 'brits-broken-axe',
     name: 'Brits Broken Axe',
@@ -86,6 +77,15 @@ export const LEGENDARY_TOOLS = [
     dropSource: 'Yüksek seviye boss kasaları ve etkinlik ödülleri',
     effect: 'Standart efsanevi toplama aletidir; yüksek verim sağlar, tamir masasında normal şekilde tamir edilir.',
     highlight: 'Hızlı hammadde toplamak için ideal başlangıç efsanevisidir.'
+  },
+  {
+    id: 'mads-extra-magical',
+    name: 'Mad’s Extra Magical Tools',
+    category: 'Özel Tamir Eşyası',
+    isConsumable: true,
+    dropSource: 'Nightmare Raids, Legendary Helis, Deep Sea Kasaları',
+    effect: 'Bir alet değildir; tek kullanımlık sürükle-bırak tamir eşyasıdır. Envanterde canı azalmış herhangi bir eşyanın üzerine sürüklendiğinde kalıcı kırmızı bar cezasını tamamen sıfırlar ve eşyayı %100 maksimum yeşil cana ulaştırır.',
+    highlight: 'Kırmızı barı dolup bir daha tamir edilemeyecek eşyaları yok olmaktan kurtaran tek yöntemdir.'
   }
 ];
 
