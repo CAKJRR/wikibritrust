@@ -35,30 +35,4 @@
    * Standart *Mad’s Magical Tools* vs Kalıcı %100 can yenileyen *Mad’s Extra Magical Tools* farkı.
    * Efsanevi altın silahlar tablosu (Brits Golden M249, Golden AK, Laginator, Plaguepiercer vb.).
 5. **Sunucu Komutları:**
-   * Tek tıkla kopyalanabilen `/st`, `/ps`, `/setgenes`, `/outpost`, `/hub`, `/buyraid`, `/tower1` vb.
-
----
-
-## 🛠️ Yerel Kurulum (Local Development)
-
-```bash
-# Depoyu klonlayın
-git clone https://github.com/CAKJRR/wikibritrust.git
-cd wikibritrust
-
-# Bağımlılıkları yükleyin
-npm install
-
-# Geliştirici sunucusunu başlatın
-npm run dev
-```
-
----
-
-## ☁️ Vercel'e Dağıtım (Deploy to Vercel)
-
-1. Projeyi GitHub'a gönderin (`git push origin main`).
-2. [Vercel](https://vercel.com) paneline gidin ve **"Add New Project"** butonuna tıklayın.
-3. `CAKJRR/wikibritrust` reposunu seçin.
-4. Vercel, projeyi **Vite** olarak otomatik tanıyacaktır (Framework Preset: Vite, Build Command: `npm run build`, Output Directory: `dist`).
-5. **"Deploy"** butonuna basın. Birkaç saniye içinde siteniz canlı yayında! 🎉
+   * Tek tıkla kopyalanabilen `/st`, `/ps`, `/setgenes`, `/outpost`, `/hub`, `/buyraid`, `/tower1` 
