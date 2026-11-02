@@ -625,7 +625,7 @@ export const SKILLS_DATA = [
     category: 'Explosives',
     tier: 'God-Tier',
     type: 'Ability',
-    cost: '1 SP (Owned)',
+    cost: '1 SP',
     benefit: 'On-Demand AirStrike Flare',
     desc: 'İşaret fişeği fırlatarak gökyüzünden hedefe güdümlü füze yağmuru indirme yeteneğidir.',
     synergy: 'Taret tarlalarını ve kalabalık NPC kamplarını uzaktan temizlemek için kullanılır.'

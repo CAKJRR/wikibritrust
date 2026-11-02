@@ -97,7 +97,7 @@ export const TREE_LAYOUTS = {
       { id: 'chemical-chef', x: 80, y: 92, name: 'Chemical Chef', icon: '⚗️', rank: '0/1', cost: '5 SP', tier: 'S-Tier' },
 
       // Crafting & Armor (Sağ Dal)
-      { id: 'well-crafted', x: 66, y: 50, name: 'Well Crafted', icon: '🛡️', rank: '3/3', cost: '1 SP', tier: 'S-Tier' },
+      { id: 'well-crafted', x: 66, y: 50, name: 'Well Crafted', icon: '🛡️', rank: '0/3', cost: '1 SP', tier: 'S-Tier' },
       { id: 'made-to-order', x: 80, y: 50, name: 'Made to Order', icon: '⏱️', rank: '0/1', cost: '5 SP', tier: 'God-Tier' },
       { id: 'refined-blueprints', x: 94, y: 50, name: 'Refined Blueprints', icon: '📜', rank: '0/1', cost: '5 SP', tier: 'God-Tier' },
       { id: 'walking-tank', x: 78, y: 34, name: 'Walking Tank', icon: '🪖', rank: '0/3', cost: '1 SP', tier: 'A-Tier' },
@@ -150,7 +150,7 @@ export const TREE_LAYOUTS = {
       { id: 'aerodynamically-sound', x: 32, y: 18, name: 'Aerodynamic', icon: '🚀', rank: '0/1', cost: '5 SP', tier: 'God-Tier' },
       { id: 'reliable-fuses', x: 16, y: 18, name: 'Reliable Fuses', icon: '🧨', rank: '0/1', cost: '1 SP', tier: 'A-Tier' },
       { id: 'blastproof', x: 68, y: 18, name: 'Blastproof', icon: '🛡️', rank: '0/1', cost: '1 SP', tier: 'God-Tier' },
-      { id: 'orbital-strike', x: 84, y: 18, name: 'Orbital Strike', icon: '☄️', rank: '1/1', cost: 'Owned', tier: 'God-Tier' },
+      { id: 'orbital-strike', x: 84, y: 18, name: 'Orbital Strike', icon: '☄️', rank: '0/1', cost: '1 SP', tier: 'God-Tier' },
 
       // Vampirism & Animals (Sol Dal)
       { id: 'big-game-hunter', x: 34, y: 50, name: 'Big Game Hunter', icon: '🏹', rank: '0/1', cost: '1 SP', tier: 'A-Tier' },
@@ -159,8 +159,8 @@ export const TREE_LAYOUTS = {
       { id: 'team-effort', x: 34, y: 68, name: 'Team Effort', icon: '👥', rank: '0/1', cost: '5 SP', tier: 'C-Tier' },
 
       // Guns & Ammo (Sağ Dal)
-      { id: 'extra-rounds', x: 66, y: 50, name: 'Extra Rounds', icon: '🎯', rank: '3/3', cost: 'Owned', tier: 'S-Tier' },
-      { id: 'elite-manufacturing', x: 80, y: 34, name: 'Elite Manuf.', icon: '🔫', rank: '3/3', cost: 'Owned', tier: 'S-Tier' },
+      { id: 'extra-rounds', x: 66, y: 50, name: 'Extra Rounds', icon: '🎯', rank: '0/3', cost: '1 SP', tier: 'S-Tier' },
+      { id: 'elite-manufacturing', x: 80, y: 34, name: 'Elite Manuf.', icon: '🔫', rank: '0/3', cost: '1 SP', tier: 'S-Tier' },
       { id: 'ammo-rationing', x: 94, y: 34, name: 'Ammo Rationing', icon: '📦', rank: '0/1', cost: '5 SP', tier: 'God-Tier' },
       { id: 'sixth-sense', x: 80, y: 50, name: 'Sixth Sense', icon: '👁️', rank: '0/1', cost: '5 SP', tier: 'C-Tier' },
       { id: 'armored', x: 80, y: 66, name: 'Armored', icon: '🪖', rank: '0/3', cost: '1 SP', tier: 'S-Tier' },
