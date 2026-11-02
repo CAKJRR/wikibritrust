@@ -13,18 +13,18 @@ export default function HeroBanner({ onQuickFilter }) {
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sow-dark/80 border border-terracotta/30 text-xs font-semibold text-terracotta-light">
             <Sparkles className="w-3.5 h-3.5 text-sprout" />
-            <span>CAKJRR Özel Topluluk Kılavuzu</span>
+            <span>Brits PvE Worlds V2 • Türkçe Bilgi Bankası</span>
           </div>
-          <span className="text-xs text-mist font-medium">Brits PvE Worlds V2</span>
+          <span className="text-xs text-mist font-medium">Topluluk Ansiklopedisi</span>
         </div>
 
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-seedling mb-4 leading-tight">
-          Vahşi Doğada Hayatta Kalmanın &amp; Zirveye Çıkmanın <span className="text-terracotta italic font-normal">Tam Kılavuzu</span>
+          Vahşi Doğada Hayatta Kalmanın &amp; Gelişimin <span className="text-terracotta italic font-normal">Kapsamlı Rehberi</span>
         </h1>
 
         <p className="text-sm sm:text-base text-seedling-muted leading-relaxed mb-6">
           Worlds V2 güncellemesiyle birleşen küresel yetenek ağacı, Deep Sea Cobalt kargo operasyonları, 
-          Harbinger (Boss Drone) arena taktikleri ve en hızlı RP farm metası bu rehberde toplandı.
+          Harbinger (Boss Drone) arena taktikleri ve sunucu ekonomisi bu platformda toplandı.
         </p>
 
         {/* Quick Shortcut Tags */}
