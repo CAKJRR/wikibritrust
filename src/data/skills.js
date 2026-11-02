@@ -603,7 +603,7 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '100% Dud Detonation',
-    desc: 'Sönen / fitili boşa çıkan (dud) Satchel ve Beancan patlayıcılar yine de kesin olarak patlar.',
+    desc: 'Sönen / fitili boşa çıkan (dud) Kese Bombası (Satchel) ve Beancan patlayıcılar yine de kesin olarak patlar.',
     synergy: 'Erken oyun raidlerinde fitil sönmesi yüzünden bekleme ve ölme riskini bitirir.'
   },
   {
@@ -615,7 +615,7 @@ export const SKILLS_DATA = [
     type: 'Ability',
     cost: '1 SP',
     benefit: '100% Self Explosive Resist',
-    desc: 'Kendi attığınız patlayıcılardan (C4, Roket, F1, Satchel, MLRS) hasar almazsınız.',
+    desc: 'Kendi attığınız patlayıcılardan (C4, Roket, F1, Kese Bombası, MLRS) hasar almazsınız.',
     synergy: 'Dar alanlarda veya kapı diplerinde güvenle roket atmanızı sağlar.'
   },
   {

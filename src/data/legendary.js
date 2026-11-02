@@ -202,8 +202,8 @@ export const LEGENDARY_WEAPONS = [
   },
   {
     name: 'Eooooka',
-    effect: 'Satchel patlayıcısı fırlatan eoka tabancası (Satchel-charged eoka)',
-    ammo: 'Av Tüfeği Saçması (Shotgun Shells) & Çanta Bombası (Satchel Charge)',
+    effect: 'Kese Bombası (Satchel Charge) fırlatan eoka tabancası',
+    ammo: 'Av Tüfeği Saçması (Shotgun Shells) & Kese Bombası (Satchel Charge)',
     role: 'Erken Oyun Kapı Kırıcı'
   }
 ];
